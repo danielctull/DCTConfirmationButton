@@ -50,26 +50,16 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 	self.confirmationTintColor = [UIColor colorWithRed:0.141f green:0.667f blue:0.169f alpha:1.0f];
 
 	[self setTitleColor:self.tintColor forState:UIControlStateNormal];
-	[self setTitleColor:[UIColor whiteColor] forState:(UIControlStateHighlighted | UIControlStateSelected)];
+	[self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+	[self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	[self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
 
 	[self setConfirmationTitleColor:self.confirmationTintColor forState:UIControlStateNormal];
-	[self setConfirmationTitleColor:[UIColor whiteColor] forState:(UIControlStateHighlighted | UIControlStateSelected)];
+	[self setConfirmationTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+	[self setConfirmationTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
+	[self setConfirmationTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
 
 	[self addSubview:self.button];
-}
-
-- (void)layoutSubviews {
-	[super layoutSubviews];
-
-	self.clipsToBounds = YES;
-
-	UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-	[self.button setBackgroundImage:image forState:UIControlStateNormal];
-	[self.confirmationButton setBackgroundImage:image forState:UIControlStateNormal];
-
-	UIImage *selectedImage = [[UIImage imageNamed:@"DCTStoreButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-	[self.button setBackgroundImage:selectedImage forState:(UIControlStateHighlighted | UIControlStateSelected)];
-	[self.confirmationButton setBackgroundImage:selectedImage forState:(UIControlStateHighlighted | UIControlStateSelected)];
 }
 
 - (void)willMoveToSuperview:(UIView *)superview {
@@ -93,6 +83,12 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 	} completion:^(BOOL finished) {
 		[self.button removeFromSuperview];
 	}];
+}
+
+- (void)setEnabled:(BOOL)enabled {
+	[super setEnabled:enabled];
+	[self.button setEnabled:enabled];
+	[self.confirmationButton setEnabled:enabled];
 }
 
 - (void)setLoading:(BOOL)loading {
@@ -196,6 +192,12 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 	if (!_button) {
 		_button = [[UIButton alloc] initWithFrame:self.bounds];
 		[_button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+
+		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *selectedImage = [[UIImage imageNamed:@"DCTStoreButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		[_button setBackgroundImage:image forState:UIControlStateNormal];
+		[_button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
+		[_button setBackgroundImage:selectedImage forState:UIControlStateSelected];
 	}
 
 	return _button;
@@ -232,8 +234,12 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 
 	if (!_confirmationButton) {
 		_confirmationButton = [[UIButton alloc] initWithFrame:self.bounds];
-		[_confirmationButton setTitleColor:self.confirmationTintColor forState:UIControlStateNormal];
-		[_confirmationButton setTitleColor:[UIColor whiteColor] forState:(UIControlStateHighlighted | UIControlStateSelected)];
+
+		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *selectedImage = [[UIImage imageNamed:@"DCTStoreButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		[_confirmationButton setBackgroundImage:image forState:UIControlStateNormal];
+		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
+		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateSelected];
 	}
 
 	return _confirmationButton;

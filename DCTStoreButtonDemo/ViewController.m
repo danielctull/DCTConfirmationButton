@@ -19,6 +19,7 @@
 	[super viewDidLoad];
 
 	[self.storeButton setTitle:@"£4.99" forState:UIControlStateNormal];
+	[self.storeButton setTitle:@"Purchased" forState:UIControlStateDisabled];
 	[self.storeButton setConfirmationTitle:@"Buy" forState:UIControlStateNormal];
 }
 
@@ -30,6 +31,8 @@
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 		self.storeButton.loading = NO;
+		self.storeButton.enabled = NO;
+		self.storeButton.tintColor = [UIColor lightGrayColor];
 	});
 }
 
