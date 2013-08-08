@@ -17,10 +17,6 @@
 
 @implementation DCTConfirmationButton
 
-- (void)dealloc {
-	[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
-}
-
 - (id)initWithCoder:(NSCoder *)coder {
 	self = [super initWithCoder:coder];
 	if (!self) return nil;
@@ -79,14 +75,12 @@
 	return frame;
 }
 
-- (void)willMoveToSuperview:(UIView *)superview {
-	[super willMoveToSuperview:superview];
-	[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
-}
-
-- (void)willMoveToWindow:(UIWindow *)window {
-	[super willMoveToWindow:window];
-	[window addGestureRecognizer:self.tapOutsideGestureRecognizer];
+- (void)didMoveToSuperview {
+	UIView *superview = self.superview;
+	if (superview)
+		[superview.window addGestureRecognizer:self.tapOutsideGestureRecognizer];
+	else
+		[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
 }
 
 - (void)buttonTapped:(id)sender {
@@ -194,8 +188,10 @@
 
 - (UIGestureRecognizer *)tapOutsideGestureRecognizer {
 
-	if (!_tapOutsideGestureRecognizer) _tapOutsideGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedOutside:)];
-
+	if (!_tapOutsideGestureRecognizer) {
+		_tapOutsideGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedOutside:)];
+		_tapOutsideGestureRecognizer.cancelsTouchesInView = NO;
+	}
 	return _tapOutsideGestureRecognizer;
 }
 
