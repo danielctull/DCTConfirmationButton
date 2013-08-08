@@ -11,12 +11,6 @@
 		24AD82BE17B3A677004D0708 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82BD17B3A677004D0708 /* Foundation.framework */; };
 		24AD82C317B3A677004D0708 /* DCTStoreButton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24AD82C217B3A677004D0708 /* DCTStoreButton.h */; };
 		24AD82C517B3A677004D0708 /* DCTStoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AD82C417B3A677004D0708 /* DCTStoreButton.m */; };
-		24AD82CC17B3A677004D0708 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82CB17B3A677004D0708 /* XCTest.framework */; };
-		24AD82CD17B3A677004D0708 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82BD17B3A677004D0708 /* Foundation.framework */; };
-		24AD82CF17B3A677004D0708 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82CE17B3A677004D0708 /* UIKit.framework */; };
-		24AD82D217B3A677004D0708 /* libDCTStoreButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82BA17B3A677004D0708 /* libDCTStoreButton.a */; };
-		24AD82D817B3A677004D0708 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 24AD82D617B3A677004D0708 /* InfoPlist.strings */; };
-		24AD82DA17B3A677004D0708 /* DCTStoreButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AD82D917B3A677004D0708 /* DCTStoreButtonTests.m */; };
 		24AD82E417B3A6C2004D0708 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82E317B3A6C2004D0708 /* UIKit.framework */; };
 		24AD82FF17B3A840004D0708 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82BD17B3A677004D0708 /* Foundation.framework */; };
 		24AD830117B3A840004D0708 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD830017B3A840004D0708 /* CoreGraphics.framework */; };
@@ -28,16 +22,6 @@
 		24AD832C17B3A8AC004D0708 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24AD832B17B3A8AC004D0708 /* iPhone.storyboard */; };
 		24AD833117B3AF3E004D0708 /* DCTStoreButton.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24AD833017B3AF3E004D0708 /* DCTStoreButton.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		24AD82D017B3A677004D0708 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 24AD82B217B3A676004D0708 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 24AD82B917B3A677004D0708;
-			remoteInfo = DCTStoreButton;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		24AD82B817B3A677004D0708 /* CopyFiles */ = {
@@ -59,12 +43,8 @@
 		24AD82BD17B3A677004D0708 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24AD82C217B3A677004D0708 /* DCTStoreButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTStoreButton.h; sourceTree = "<group>"; };
 		24AD82C417B3A677004D0708 /* DCTStoreButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTStoreButton.m; sourceTree = "<group>"; };
-		24AD82CA17B3A677004D0708 /* DCTStoreButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCTStoreButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AD82CB17B3A677004D0708 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		24AD82CE17B3A677004D0708 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		24AD82D517B3A677004D0708 /* DCTStoreButtonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCTStoreButtonTests-Info.plist"; sourceTree = "<group>"; };
-		24AD82D717B3A677004D0708 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		24AD82D917B3A677004D0708 /* DCTStoreButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTStoreButtonTests.m; sourceTree = "<group>"; };
 		24AD82E317B3A6C2004D0708 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		24AD82EA17B3A705004D0708 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		24AD82FE17B3A840004D0708 /* DCTStoreButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCTStoreButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,17 +68,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24AD82C717B3A677004D0708 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24AD82CC17B3A677004D0708 /* XCTest.framework in Frameworks */,
-				24AD82D217B3A677004D0708 /* libDCTStoreButton.a in Frameworks */,
-				24AD82CF17B3A677004D0708 /* UIKit.framework in Frameworks */,
-				24AD82CD17B3A677004D0708 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		24AD82FB17B3A840004D0708 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -118,7 +87,6 @@
 			children = (
 				24AD833017B3AF3E004D0708 /* DCTStoreButton.xcassets */,
 				24AD82BF17B3A677004D0708 /* DCTStoreButton */,
-				24AD82D317B3A677004D0708 /* DCTStoreButtonTests */,
 				24AD830317B3A840004D0708 /* DCTStoreButtonDemo */,
 				24AD82BC17B3A677004D0708 /* Frameworks */,
 				24AD82BB17B3A677004D0708 /* Products */,
@@ -129,7 +97,6 @@
 			isa = PBXGroup;
 			children = (
 				24AD82BA17B3A677004D0708 /* libDCTStoreButton.a */,
-				24AD82CA17B3A677004D0708 /* DCTStoreButtonTests.xctest */,
 				24AD82FE17B3A840004D0708 /* DCTStoreButtonDemo.app */,
 			);
 			name = Products;
@@ -155,24 +122,6 @@
 				24AD82C417B3A677004D0708 /* DCTStoreButton.m */,
 			);
 			path = DCTStoreButton;
-			sourceTree = "<group>";
-		};
-		24AD82D317B3A677004D0708 /* DCTStoreButtonTests */ = {
-			isa = PBXGroup;
-			children = (
-				24AD82D917B3A677004D0708 /* DCTStoreButtonTests.m */,
-				24AD82D417B3A677004D0708 /* Supporting Files */,
-			);
-			path = DCTStoreButtonTests;
-			sourceTree = "<group>";
-		};
-		24AD82D417B3A677004D0708 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				24AD82D517B3A677004D0708 /* DCTStoreButtonTests-Info.plist */,
-				24AD82D617B3A677004D0708 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		24AD830317B3A840004D0708 /* DCTStoreButtonDemo */ = {
@@ -210,24 +159,6 @@
 			productReference = 24AD82BA17B3A677004D0708 /* libDCTStoreButton.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		24AD82C917B3A677004D0708 /* DCTStoreButtonTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 24AD82E017B3A677004D0708 /* Build configuration list for PBXNativeTarget "DCTStoreButtonTests" */;
-			buildPhases = (
-				24AD82C617B3A677004D0708 /* Sources */,
-				24AD82C717B3A677004D0708 /* Frameworks */,
-				24AD82C817B3A677004D0708 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				24AD82D117B3A677004D0708 /* PBXTargetDependency */,
-			);
-			name = DCTStoreButtonTests;
-			productName = DCTStoreButtonTests;
-			productReference = 24AD82CA17B3A677004D0708 /* DCTStoreButtonTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		24AD82FD17B3A840004D0708 /* DCTStoreButtonDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 24AD832317B3A840004D0708 /* Build configuration list for PBXNativeTarget "DCTStoreButtonDemo" */;
@@ -253,11 +184,6 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Daniel Tull";
-				TargetAttributes = {
-					24AD82C917B3A677004D0708 = {
-						TestTargetID = 24AD82FD17B3A840004D0708;
-					};
-				};
 			};
 			buildConfigurationList = 24AD82B517B3A676004D0708 /* Build configuration list for PBXProject "DCTStoreButton" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -272,21 +198,12 @@
 			projectRoot = "";
 			targets = (
 				24AD82B917B3A677004D0708 /* DCTStoreButton */,
-				24AD82C917B3A677004D0708 /* DCTStoreButtonTests */,
 				24AD82FD17B3A840004D0708 /* DCTStoreButtonDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		24AD82C817B3A677004D0708 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24AD82D817B3A677004D0708 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		24AD82FC17B3A840004D0708 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -308,14 +225,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		24AD82C617B3A677004D0708 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24AD82DA17B3A677004D0708 /* DCTStoreButtonTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		24AD82FA17B3A840004D0708 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,25 +236,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		24AD82D117B3A677004D0708 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 24AD82B917B3A677004D0708 /* DCTStoreButton */;
-			targetProxy = 24AD82D017B3A677004D0708 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		24AD82D617B3A677004D0708 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				24AD82D717B3A677004D0708 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		24AD82DB17B3A677004D0708 /* Debug */ = {
@@ -436,46 +326,6 @@
 			};
 			name = Release;
 		};
-		24AD82E117B3A677004D0708 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCTStoreButtonDemo.app/DCTStoreButtonDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCTStoreButton/DCTStoreButton-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DCTStoreButtonTests/DCTStoreButtonTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		24AD82E217B3A677004D0708 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCTStoreButtonDemo.app/DCTStoreButtonDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCTStoreButton/DCTStoreButton-Prefix.pch";
-				INFOPLIST_FILE = "DCTStoreButtonTests/DCTStoreButtonTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 		24AD832417B3A840004D0708 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -525,15 +375,6 @@
 			buildConfigurations = (
 				24AD82DE17B3A677004D0708 /* Debug */,
 				24AD82DF17B3A677004D0708 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		24AD82E017B3A677004D0708 /* Build configuration list for PBXNativeTarget "DCTStoreButtonTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				24AD82E117B3A677004D0708 /* Debug */,
-				24AD82E217B3A677004D0708 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
