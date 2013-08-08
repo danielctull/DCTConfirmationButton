@@ -1,21 +1,21 @@
 //
-//  DCTStoreButton.m
-//  DCTStoreButton
+//  DCTConfirmationButton.m
+//  DCTConfirmationButton
 //
 //  Created by Daniel Tull on 08.08.2013.
 //  Copyright (c) 2013 Daniel Tull. All rights reserved.
 //
 
-#import "DCTStoreButton.h"
+#import "DCTConfirmationButton.h"
 
-@interface DCTStoreButton ()
+@interface DCTConfirmationButton ()
 @property (nonatomic) UIGestureRecognizer *tapOutsideGestureRecognizer;
 @property (nonatomic) UIButton *button;
 @property (nonatomic) UIButton *confirmationButton;
 @property (nonatomic) UIImageView *loadingImageView;
 @end
 
-@implementation DCTStoreButton
+@implementation DCTConfirmationButton
 
 - (void)dealloc {
 	[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
@@ -202,7 +202,7 @@
 - (UIImageView *)loadingImageView {
 
 	if (!_loadingImageView) {
-		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonLoading"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *image = [[UIImage imageNamed:@"DCTConfirmationButtonLoading"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 		_loadingImageView = [[UIImageView alloc] initWithImage:image];
 	}
 
@@ -217,8 +217,8 @@
 		_button = [[UIButton alloc] initWithFrame:self.bounds];
 		[_button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
-		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-		UIImage *selectedImage = [[UIImage imageNamed:@"DCTStoreButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *image = [[UIImage imageNamed:@"DCTConfirmationButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *selectedImage = [[UIImage imageNamed:@"DCTConfirmationButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 		[_button setBackgroundImage:image forState:UIControlStateNormal];
 		[_button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
 		[_button setBackgroundImage:selectedImage forState:UIControlStateSelected];
@@ -259,8 +259,8 @@
 	if (!_confirmationButton) {
 		_confirmationButton = [[UIButton alloc] initWithFrame:self.bounds];
 
-		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-		UIImage *selectedImage = [[UIImage imageNamed:@"DCTStoreButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *image = [[UIImage imageNamed:@"DCTConfirmationButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *selectedImage = [[UIImage imageNamed:@"DCTConfirmationButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 		[_confirmationButton setBackgroundImage:image forState:UIControlStateNormal];
 		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
 		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateSelected];

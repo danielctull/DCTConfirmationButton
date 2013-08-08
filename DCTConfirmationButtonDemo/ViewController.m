@@ -1,16 +1,16 @@
 //
 //  ViewController.m
-//  DCTStoreButton
+//  DCTConfirmationButton
 //
 //  Created by Daniel Tull on 08.08.2013.
 //  Copyright (c) 2013 Daniel Tull. All rights reserved.
 //
 
 #import "ViewController.h"
-#import <DCTStoreButton/DCTStoreButton.h>
+#import <DCTConfirmationButton/DCTConfirmationButton.h>
 
 @interface ViewController ()
-@property (nonatomic, weak) IBOutlet DCTStoreButton *storeButton;
+@property (nonatomic, weak) IBOutlet DCTConfirmationButton *storeButton;
 @end
 
 @implementation ViewController
