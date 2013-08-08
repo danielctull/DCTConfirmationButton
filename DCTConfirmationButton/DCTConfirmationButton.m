@@ -131,6 +131,8 @@
 		rotationAnimation.repeatCount = CGFLOAT_MAX;
 		[self.loadingImageView.layer addAnimation:rotationAnimation forKey:rotationKey];
 
+		self.confirmationButton.titleLabel.font = [UIFont systemFontOfSize:0.0f];
+
 		[UIView animateWithDuration:0.25f animations:^{
 			self.confirmationButton.frame = frame;
 		}];
@@ -142,6 +144,7 @@
 
 		} completion:^(BOOL finished) {
 			[self.confirmationButton removeFromSuperview];
+			self.confirmationButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
 		}];
 
 	} else {
@@ -218,6 +221,7 @@
 		[_button setBackgroundImage:image forState:UIControlStateNormal];
 		[_button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
 		[_button setBackgroundImage:selectedImage forState:UIControlStateSelected];
+		_button.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
 	}
 
 	return _button;
@@ -260,6 +264,7 @@
 		[_confirmationButton setBackgroundImage:image forState:UIControlStateNormal];
 		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
 		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateSelected];
+		_confirmationButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
 	}
 
 	return _confirmationButton;
