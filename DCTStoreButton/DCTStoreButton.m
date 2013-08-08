@@ -62,6 +62,29 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 	[self addSubview:self.button];
 }
 
+- (void)layoutSubviews {
+	[super layoutSubviews];
+	self.button.frame = [self frameForButton];
+}
+
+- (CGRect)frameForConfirmationButton {
+	CGSize size = [self.confirmationButton sizeThatFits:self.bounds.size];
+	size.width += 12.0f;
+	CGRect frame = self.button.frame;
+	frame.size.width = size.width;
+	frame.origin.x = self.bounds.size.width - size.width;
+	return frame;
+}
+
+- (CGRect)frameForButton {
+	CGSize size = [self.button sizeThatFits:self.bounds.size];
+	size.width += 12.0f;
+	CGRect frame = self.button.frame;
+	frame.size.width = size.width;
+	frame.origin.x = self.bounds.size.width - size.width;
+	return frame;
+}
+
 - (void)willMoveToSuperview:(UIView *)superview {
 	[super willMoveToSuperview:superview];
 	[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
@@ -75,11 +98,16 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 - (void)buttonTapped:(id)sender {
 
 	self.confirmationButton.alpha = 0.0f;
+	self.confirmationButton.frame = self.button.frame;
 	[self addSubview:self.confirmationButton];
+
+	CGRect confirmationFrame = [self frameForConfirmationButton];
 
 	[UIView animateWithDuration:0.25f animations:^{
 		self.button.alpha = 0.0f;
+		self.button.frame = confirmationFrame;
 		self.confirmationButton.alpha = 1.0f;
+		self.confirmationButton.frame = confirmationFrame;
 	} completion:^(BOOL finished) {
 		[self.button removeFromSuperview];
 	}];
@@ -125,20 +153,17 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 			self.loadingImageView.alpha = 1.0f;
 
 		} completion:^(BOOL finished) {
-			self.confirmationButton.frame = self.bounds;
 			[self.confirmationButton removeFromSuperview];
 		}];
 
 	} else {
-
-		CGRect frame = self.bounds;
 
 		self.button.alpha = 0.0f;
 		self.button.frame = self.loadingImageView.frame;
 		[self addSubview:self.button];
 
 		[UIView animateWithDuration:0.25f animations:^{
-			self.button.frame = frame;
+			self.button.frame = [self frameForButton];
 		} completion:^(BOOL finished) {
 			[self.loadingImageView.layer removeAnimationForKey:rotationKey];
 			[self.loadingImageView removeFromSuperview];
@@ -157,11 +182,16 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 	if (!self.confirmationButton.superview) return;
 
 	self.button.alpha = 0.0f;
+	self.button.frame = self.confirmationButton.frame;
 	[self addSubview:self.button];
+
+	CGRect buttonFrame = [self frameForButton];
 
 	[UIView animateWithDuration:0.25f animations:^{
 		self.button.alpha = 1.0f;
+		self.button.frame = buttonFrame;
 		self.confirmationButton.alpha = 0.0f;
+		self.confirmationButton.frame = buttonFrame;
 	} completion:^(BOOL finished) {
 		[self.confirmationButton removeFromSuperview];
 	}];
