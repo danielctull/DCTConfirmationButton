@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		247B2E9417B409E6003D8E1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247B2E9317B409E6003D8E1F /* ViewController.m */; };
 		24AD82BE17B3A677004D0708 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24AD82BD17B3A677004D0708 /* Foundation.framework */; };
 		24AD82C317B3A677004D0708 /* DCTStoreButton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 24AD82C217B3A677004D0708 /* DCTStoreButton.h */; };
 		24AD82C517B3A677004D0708 /* DCTStoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 24AD82C417B3A677004D0708 /* DCTStoreButton.m */; };
@@ -52,6 +53,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		247B2E9217B409E6003D8E1F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		247B2E9317B409E6003D8E1F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		24AD82BA17B3A677004D0708 /* libDCTStoreButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCTStoreButton.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24AD82BD17B3A677004D0708 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		24AD82C217B3A677004D0708 /* DCTStoreButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTStoreButton.h; sourceTree = "<group>"; };
@@ -181,6 +184,8 @@
 				24AD830517B3A840004D0708 /* DCTStoreButtonDemo-Info.plist */,
 				24AD830917B3A840004D0708 /* main.m */,
 				24AD832B17B3A8AC004D0708 /* iPhone.storyboard */,
+				247B2E9217B409E6003D8E1F /* ViewController.h */,
+				247B2E9317B409E6003D8E1F /* ViewController.m */,
 			);
 			path = DCTStoreButtonDemo;
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				247B2E9417B409E6003D8E1F /* ViewController.m in Sources */,
 				24AD830E17B3A840004D0708 /* AppDelegate.m in Sources */,
 				24AD830A17B3A840004D0708 /* main.m in Sources */,
 			);
@@ -539,6 +545,7 @@
 				24AD832517B3A840004D0708 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

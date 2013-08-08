@@ -15,72 +15,260 @@ typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
 };
 
 @interface DCTStoreButton ()
-@property (nonatomic) DCTStoreButtonState storeState;
+@property (nonatomic) UIGestureRecognizer *tapOutsideGestureRecognizer;
+@property (nonatomic) UIButton *button;
+@property (nonatomic) UIButton *confirmationButton;
+@property (nonatomic) UIImageView *loadingImageView;
 @end
 
 @implementation DCTStoreButton
 
-- (void)awakeFromNib {
-	[super awakeFromNib];
-
-	self.clipsToBounds = YES;
-	self.tintColor = [UIColor orangeColor];
-
-	UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-	[self setBackgroundImage:image forState:UIControlStateNormal];
-
-	image = [[UIImage imageNamed:@"DCTStoreButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-	[self setBackgroundImage:image forState:UIControlStateHighlighted];
-	[self setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+- (void)dealloc {
+	[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+- (id)initWithCoder:(NSCoder *)coder {
+	self = [super initWithCoder:coder];
+	if (!self) return nil;
+	[self sharedInit];
+	return self;
+}
 
-	[super touchesEnded:touches withEvent:event];
+- (id)initWithFrame:(CGRect)frame {
+	self = [super initWithFrame:frame];
+	if (!self) return nil;
+	[self sharedInit];
+	return self;
+}
 
-	if (self.storeState == DCTStoreButtonInitial) {
-		self.tintColor = [UIColor colorWithRed:0.141f green:0.667f blue:0.169f alpha:1.0f];
-		self.storeState = DCTStoreButtonConfirm;
-		[self setTitle:@"Buy" forState:UIControlStateNormal];
-		return;
-	}
+- (void)sharedInit {
 
-	if (self.storeState == DCTStoreButtonConfirm) {
-		self.tintColor = [UIColor orangeColor];
-		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonDownloadProgress"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-		self.enabled = NO;
-		UIImageView *iv = [[UIImageView alloc] initWithImage:image];
-		[self setTitle:@"" forState:UIControlStateDisabled];
-		
-		CGRect frame = self.frame;
-		CGFloat width = iv.bounds.size.width;
-		CGFloat x = frame.origin.x + frame.size.width - width;
-		frame.origin.x = x;
-		frame.size.width = width;
+	[super setTitle:@"" forState:UIControlStateNormal];
+	[super setImage:[UIImage new] forState:UIControlStateNormal];
+	[self setShowsTouchWhenHighlighted:NO];
+
+	self.confirmationTintColor = [UIColor colorWithRed:0.141f green:0.667f blue:0.169f alpha:1.0f];
+
+	[self setTitleColor:self.tintColor forState:UIControlStateNormal];
+	[self setTitleColor:[UIColor whiteColor] forState:(UIControlStateHighlighted | UIControlStateSelected)];
+
+	[self setConfirmationTitleColor:self.confirmationTintColor forState:UIControlStateNormal];
+	[self setConfirmationTitleColor:[UIColor whiteColor] forState:(UIControlStateHighlighted | UIControlStateSelected)];
+
+	[self addSubview:self.button];
+}
+
+- (void)layoutSubviews {
+	[super layoutSubviews];
+
+	self.clipsToBounds = YES;
+
+	UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	[self.button setBackgroundImage:image forState:UIControlStateNormal];
+	[self.confirmationButton setBackgroundImage:image forState:UIControlStateNormal];
+
+	UIImage *selectedImage = [[UIImage imageNamed:@"DCTStoreButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	[self.button setBackgroundImage:selectedImage forState:(UIControlStateHighlighted | UIControlStateSelected)];
+	[self.confirmationButton setBackgroundImage:selectedImage forState:(UIControlStateHighlighted | UIControlStateSelected)];
+}
+
+- (void)willMoveToSuperview:(UIView *)superview {
+	[super willMoveToSuperview:superview];
+	[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
+}
+
+- (void)willMoveToWindow:(UIWindow *)window {
+	[super willMoveToWindow:window];
+	[window addGestureRecognizer:self.tapOutsideGestureRecognizer];
+}
+
+- (void)buttonTapped:(id)sender {
+
+	self.confirmationButton.alpha = 0.0f;
+	[self addSubview:self.confirmationButton];
+
+	[UIView animateWithDuration:0.25f animations:^{
+		self.button.alpha = 0.0f;
+		self.confirmationButton.alpha = 1.0f;
+	} completion:^(BOOL finished) {
+		[self.button removeFromSuperview];
+	}];
+}
+
+- (void)setLoading:(BOOL)loading {
+
+	if (_loading == loading) return;
+
+	_loading = loading;
+
+	NSString *rotationKey = @"rotation";
+
+	if (loading) {
+
+		CGRect frame = self.loadingImageView.bounds;
+		frame.origin.x = self.bounds.size.width - frame.size.width;
+
+		self.loadingImageView.alpha = 0.0f;
+		self.loadingImageView.frame = frame;
+		[self addSubview:self.loadingImageView];
+
+		CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+		rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0];
+		rotationAnimation.duration = 1.0f;
+		rotationAnimation.cumulative = YES;
+		rotationAnimation.repeatCount = CGFLOAT_MAX;
+		[self.loadingImageView.layer addAnimation:rotationAnimation forKey:rotationKey];
 
 		[UIView animateWithDuration:0.25f animations:^{
-			self.frame = frame;
-		} completion:^(BOOL finished) {
-
-			[self setBackgroundImage:[UIImage new] forState:UIControlStateDisabled];
-
-			iv.tintColor = self.tintColor;
-			[self addSubview:iv];
-
-			CABasicAnimation* rotationAnimation;
-			rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-			rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0];
-			rotationAnimation.duration = 1.0f;
-			rotationAnimation.cumulative = YES;
-			rotationAnimation.repeatCount = CGFLOAT_MAX;
-
-			[iv.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+			self.confirmationButton.frame = frame;
 		}];
 
+		[UIView animateWithDuration:0.1f delay:0.15f options:UIViewAnimationOptionCurveEaseInOut animations:^{
 
+			self.confirmationButton.alpha = 0.0f;
+			self.loadingImageView.alpha = 1.0f;
 
-		return;
+		} completion:^(BOOL finished) {
+			self.confirmationButton.frame = self.bounds;
+			[self.confirmationButton removeFromSuperview];
+		}];
+
+	} else {
+
+		CGRect frame = self.bounds;
+
+		self.button.alpha = 0.0f;
+		self.button.frame = self.loadingImageView.frame;
+		[self addSubview:self.button];
+
+		[UIView animateWithDuration:0.25f animations:^{
+			self.button.frame = frame;
+		} completion:^(BOOL finished) {
+			[self.loadingImageView.layer removeAnimationForKey:rotationKey];
+			[self.loadingImageView removeFromSuperview];
+		}];
+
+		[UIView animateWithDuration:0.1f animations:^{
+			self.button.alpha = 1.0f;
+			self.loadingImageView.alpha = 0.0f;
+
+		}];
 	}
+}
+
+- (void)tappedOutside:(id)sender {
+
+	if (!self.confirmationButton.superview) return;
+
+	self.button.alpha = 0.0f;
+	[self addSubview:self.button];
+
+	[UIView animateWithDuration:0.25f animations:^{
+		self.button.alpha = 1.0f;
+		self.confirmationButton.alpha = 0.0f;
+	} completion:^(BOOL finished) {
+		[self.confirmationButton removeFromSuperview];
+	}];
+
+}
+
+- (UIGestureRecognizer *)tapOutsideGestureRecognizer {
+
+	if (!_tapOutsideGestureRecognizer) _tapOutsideGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedOutside:)];
+
+	return _tapOutsideGestureRecognizer;
+}
+
+- (UIImageView *)loadingImageView {
+
+	if (!_loadingImageView) {
+		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonDownloadProgress"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		_loadingImageView = [[UIImageView alloc] initWithImage:image];
+	}
+
+	return _loadingImageView;
+}
+
+#pragma mark - Button setters/getters
+
+- (UIButton *)button {
+
+	if (!_button) {
+		_button = [[UIButton alloc] initWithFrame:self.bounds];
+		[_button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+	}
+
+	return _button;
+}
+
+- (void)setTitle:(NSString *)title forState:(UIControlState)state {
+	[self.button setTitle:title forState:state];
+}
+
+- (NSString *)titleForState:(UIControlState)state {
+	return [self.button titleForState:state];
+}
+
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+	[self.button setTitleColor:color forState:state];
+}
+
+- (UIColor *)titleColorForState:(UIControlState)state {
+	return [self.button titleColorForState:state];
+}
+
+- (void)setTintColor:(UIColor *)tintColor {
+	self.button.tintColor = tintColor;
+	self.loadingImageView.tintColor = tintColor;
+}
+
+- (UIColor *)tintColor {
+	return self.button.tintColor;
+}
+
+#pragma mark - Confirmation button setters/getters
+
+- (UIButton *)confirmationButton {
+
+	if (!_confirmationButton) {
+		_confirmationButton = [[UIButton alloc] initWithFrame:self.bounds];
+		[_confirmationButton setTitleColor:self.confirmationTintColor forState:UIControlStateNormal];
+		[_confirmationButton setTitleColor:[UIColor whiteColor] forState:(UIControlStateHighlighted | UIControlStateSelected)];
+	}
+
+	return _confirmationButton;
+}
+
+- (void)setConfirmationTitle:(NSString *)title forState:(UIControlState)state {
+	[self.confirmationButton setTitle:title forState:state];
+}
+
+- (NSString *)confirmationTitleForState:(UIControlState)state {
+	return [self.confirmationButton titleForState:state];
+}
+
+- (void)setConfirmationTitleColor:(UIColor *)color forState:(UIControlState)state {
+	[self.confirmationButton setTitleColor:color forState:state];
+}
+
+- (UIColor *)confirmationTitleColorForState:(UIControlState)state {
+	return [self.confirmationButton titleColorForState:state];
+}
+
+- (void)setConfirmationTintColor:(UIColor *)confirmationTintColor {
+	self.confirmationButton.tintColor = confirmationTintColor;
+}
+
+- (UIColor *)confirmationTintColor {
+	return self.confirmationButton.tintColor;
+}
+
+- (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
+	[self.confirmationButton addTarget:target action:action forControlEvents:controlEvents];
+}
+
+- (void)removeTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
+	[self.confirmationButton removeTarget:target action:action forControlEvents:controlEvents];
 }
 
 @end

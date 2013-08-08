@@ -12,7 +12,11 @@
 
 - (NSString *)confirmationTitleForState:(UIControlState)state;
 - (void)setConfirmationTitle:(NSString *)title forState:(UIControlState)state;
+- (UIColor *)confirmationTitleColorForState:(UIControlState)state;
+- (void)setConfirmationTitleColor:(UIColor *)color forState:(UIControlState)state;
 
-@property (nonatomic, copy) UIColor *confirmationTint;
+@property (nonatomic) UIColor *confirmationTintColor;
+
+@property (nonatomic, getter=isLoading) BOOL loading;
 
 @end
