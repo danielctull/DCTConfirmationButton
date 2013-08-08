@@ -202,7 +202,7 @@
 - (UIImageView *)loadingImageView {
 
 	if (!_loadingImageView) {
-		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonDownloadProgress"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *image = [[UIImage imageNamed:@"DCTStoreButtonLoading"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 		_loadingImageView = [[UIImageView alloc] initWithImage:image];
 	}
 

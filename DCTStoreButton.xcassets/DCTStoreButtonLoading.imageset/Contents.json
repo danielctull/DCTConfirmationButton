@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "DCTStoreButtonLoading.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "DownloadProgressBorderIndeterminate@2x.png"
+      "filename" : "DCTStoreButtonLoading@2x.png"
     }
   ],
   "info" : {
