@@ -9,7 +9,6 @@
 #import "DCTConfirmationButton.h"
 
 @interface DCTConfirmationButton ()
-@property (nonatomic) UIGestureRecognizer *tapOutsideGestureRecognizer;
 @property (nonatomic) UIButton *button;
 @property (nonatomic) UIButton *confirmationButton;
 @property (nonatomic) UIImageView *loadingImageView;
@@ -75,14 +74,6 @@
 	return frame;
 }
 
-- (void)didMoveToSuperview {
-	UIView *superview = self.superview;
-	if (superview)
-		[superview.window addGestureRecognizer:self.tapOutsideGestureRecognizer];
-	else
-		[self.tapOutsideGestureRecognizer.view removeGestureRecognizer:self.tapOutsideGestureRecognizer];
-}
-
 - (void)buttonTapped:(id)sender {
 
 	self.confirmationButton.alpha = 0.0f;
@@ -99,6 +90,12 @@
 	} completion:^(BOOL finished) {
 		[self.button removeFromSuperview];
 	}];
+
+	double delayInSeconds = 3.0f;
+	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+		[self tappedOutside:self];
+	});
 }
 
 - (void)setEnabled:(BOOL)enabled {
@@ -171,6 +168,7 @@
 - (void)tappedOutside:(id)sender {
 
 	if (!self.confirmationButton.superview) return;
+	if (self.loadingImageView.superview) return;
 
 	self.button.alpha = 0.0f;
 	self.button.frame = self.confirmationButton.frame;
@@ -186,16 +184,6 @@
 	} completion:^(BOOL finished) {
 		[self.confirmationButton removeFromSuperview];
 	}];
-
-}
-
-- (UIGestureRecognizer *)tapOutsideGestureRecognizer {
-
-	if (!_tapOutsideGestureRecognizer) {
-		_tapOutsideGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tappedOutside:)];
-		_tapOutsideGestureRecognizer.cancelsTouchesInView = NO;
-	}
-	return _tapOutsideGestureRecognizer;
 }
 
 - (UIImageView *)loadingImageView {
