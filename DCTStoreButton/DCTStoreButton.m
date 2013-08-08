@@ -8,12 +8,6 @@
 
 #import "DCTStoreButton.h"
 
-typedef NS_ENUM(NSInteger, DCTStoreButtonState) {
-    DCTStoreButtonInitial,
-    DCTStoreButtonConfirm,
-	DCTStoreButtonLoading
-};
-
 @interface DCTStoreButton ()
 @property (nonatomic) UIGestureRecognizer *tapOutsideGestureRecognizer;
 @property (nonatomic) UIButton *button;
