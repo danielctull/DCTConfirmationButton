@@ -36,6 +36,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		244F132D17FEB1EB0016E94E /* Architectures.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Architectures.xcconfig; sourceTree = "<group>"; };
 		247B2EB117B41DAE003D8E1F /* libDCTConfirmationButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCTConfirmationButton.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		247B2EB417B41DAE003D8E1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		247B2EB917B41DAE003D8E1F /* DCTConfirmationButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTConfirmationButton.h; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		247B2EA817B41DAE003D8E1F = {
 			isa = PBXGroup;
 			children = (
+				244F132D17FEB1EB0016E94E /* Architectures.xcconfig */,
 				247B2F0F17B41F61003D8E1F /* DCTConfirmationButton.xcassets */,
 				247B2EB617B41DAE003D8E1F /* DCTConfirmationButton */,
 				247B2EE317B41E6C003D8E1F /* DCTConfirmationButtonDemo */,
@@ -236,7 +238,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -273,7 +274,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -302,6 +302,7 @@
 		};
 		247B2ED517B41DAE003D8E1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 244F132D17FEB1EB0016E94E /* Architectures.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/DCTConfirmationButton.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -313,6 +314,7 @@
 		};
 		247B2ED617B41DAE003D8E1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 244F132D17FEB1EB0016E94E /* Architectures.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/DCTConfirmationButton.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
