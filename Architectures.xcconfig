@@ -5,8 +5,8 @@
 //  Copyright (c) 2013 Daniel Tull. All rights reserved.
 //
 
-ARCHS[sdk=iphoneos*] = $(ARCHS_STANDARD);
-ARCHS[sdk=iphonesimulator*] = $(ARCHS_STANDARD);
-
 SUPPORTED_PLATFORMS = iphonesimulator iphoneos;
-VALID_ARCHS = armv7 armv7s;
+
+ARCHS = $(ARCHS_STANDARD_INCLUDING_64_BIT);
+
+VALID_ARCHS = $(ARCHS_STANDARD_INCLUDING_64_BIT);
