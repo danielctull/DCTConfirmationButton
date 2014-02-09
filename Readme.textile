@@ -2,7 +2,7 @@ h1. DCTConfirmationButton
 
 A button subclass that acts like the app store button.
 
-!=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button4.png! !=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button4.png! !=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button4.png! !=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button4.png!
+!=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button1.png! !=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button2.png! !=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button3.png! !=http://github.com/danielctull/DCTConfirmationButton/raw/master/Images/button4.png!
 
 h2. License
 
