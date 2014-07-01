@@ -19,4 +19,6 @@
 
 @property (nonatomic, getter=isLoading) BOOL loading;
 
+- (void)tappedOutside:(id)sender;
+
 @end

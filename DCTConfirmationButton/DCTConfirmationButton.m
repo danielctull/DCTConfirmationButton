@@ -57,20 +57,24 @@
 }
 
 - (CGRect)frameForConfirmationButton {
+    CGRect oldFrame = self.button.frame;
 	CGSize size = [self.confirmationButton sizeThatFits:self.bounds.size];
 	size.width += 12.0f;
 	CGRect frame = self.button.frame;
 	frame.size.width = size.width;
-	frame.origin.x = self.bounds.size.width - size.width;
+//	frame.origin.x = self.bounds.size.width - size.width;
+    frame.origin.x = oldFrame.origin.x;
 	return frame;
 }
 
 - (CGRect)frameForButton {
+    CGRect oldFrame = self.button.frame;
 	CGSize size = [self.button sizeThatFits:self.bounds.size];
 	size.width += 12.0f;
 	CGRect frame = self.button.frame;
 	frame.size.width = size.width;
-	frame.origin.x = self.bounds.size.width - size.width;
+//	frame.origin.x = self.bounds.size.width - size.width;
+    frame.origin.x = oldFrame.origin.x;
 	return frame;
 }
 
@@ -82,20 +86,23 @@
 
 	CGRect confirmationFrame = [self frameForConfirmationButton];
 
-	[UIView animateWithDuration:0.25f animations:^{
+    [UIView animateWithDuration:0.10f animations:^{
 		self.button.alpha = 0.0f;
-		self.button.frame = confirmationFrame;
 		self.confirmationButton.alpha = 1.0f;
+	} completion:nil];
+    
+	[UIView animateWithDuration:0.25f animations:^{
+		self.button.frame = confirmationFrame;
 		self.confirmationButton.frame = confirmationFrame;
 	} completion:^(BOOL finished) {
 		[self.button removeFromSuperview];
 	}];
 
-	double delayInSeconds = 3.0f;
-	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-		[self tappedOutside:self];
-	});
+//	double delayInSeconds = 3.0f;
+//	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+//	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//		[self tappedOutside:self];
+//	});
 }
 
 - (void)setEnabled:(BOOL)enabled {
@@ -176,10 +183,13 @@
 
 	CGRect buttonFrame = [self frameForButton];
 
-	[UIView animateWithDuration:0.25f animations:^{
+    [UIView animateWithDuration:0.10f animations:^{
 		self.button.alpha = 1.0f;
-		self.button.frame = buttonFrame;
 		self.confirmationButton.alpha = 0.0f;
+	} completion:nil];
+    
+	[UIView animateWithDuration:0.25f animations:^{
+		self.button.frame = buttonFrame;
 		self.confirmationButton.frame = buttonFrame;
 	} completion:^(BOOL finished) {
 		[self.confirmationButton removeFromSuperview];
