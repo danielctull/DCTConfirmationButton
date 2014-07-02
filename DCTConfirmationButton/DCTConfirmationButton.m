@@ -244,6 +244,7 @@
 - (void)setTintColor:(UIColor *)tintColor {
 	self.button.tintColor = tintColor;
 	self.loadingImageView.tintColor = tintColor;
+    [self setTitleColor:tintColor forState:UIControlStateNormal];
 }
 
 - (UIColor *)tintColor {
@@ -286,6 +287,7 @@
 
 - (void)setConfirmationTintColor:(UIColor *)confirmationTintColor {
 	self.confirmationButton.tintColor = confirmationTintColor;
+    [_confirmationButton setTitleColor:confirmationTintColor forState:UIControlStateNormal];
 }
 
 - (UIColor *)confirmationTintColor {
