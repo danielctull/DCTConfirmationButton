@@ -8,7 +8,10 @@
 
 @import UIKit;
 
-@interface DCTConfirmationButton : UIButton
+@interface DCTConfirmationButton : UIButton {
+    NSLayoutConstraint *_widthConstraint;
+    NSLayoutConstraint *_heightConstraint;
+}
 
 - (NSString *)confirmationTitleForState:(UIControlState)state;
 - (void)setConfirmationTitle:(NSString *)title forState:(UIControlState)state;
@@ -16,7 +19,8 @@
 - (void)setConfirmationTitleColor:(UIColor *)color forState:(UIControlState)state;
 
 @property (nonatomic) UIColor *confirmationTintColor;
-
 @property (nonatomic, getter=isLoading) BOOL loading;
+
+- (void)tappedOutside:(id)sender;
 
 @end
