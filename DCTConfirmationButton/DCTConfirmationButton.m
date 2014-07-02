@@ -31,7 +31,6 @@
 }
 
 - (void)sharedInit {
-
 	[super setTitle:@"" forState:UIControlStateNormal];
 	[super setImage:[UIImage new] forState:UIControlStateNormal];
 	[self setShowsTouchWhenHighlighted:NO];
@@ -49,6 +48,23 @@
 	[self setConfirmationTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
 
 	[self addSubview:self.button];
+    
+    _widthConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                    attribute:NSLayoutAttributeWidth
+                                                    relatedBy:NSLayoutRelationEqual
+                                                       toItem:nil
+                                                    attribute:NSLayoutAttributeNotAnAttribute
+                                                   multiplier:1.0
+                                                     constant:[self frameForButton].size.width];
+    [self addConstraint:_widthConstraint];
+    _heightConstraint = [NSLayoutConstraint constraintWithItem:self
+                                                     attribute:NSLayoutAttributeHeight
+                                                     relatedBy:NSLayoutRelationEqual
+                                                        toItem:nil
+                                                     attribute:NSLayoutAttributeNotAnAttribute
+                                                    multiplier:1.0
+                                                      constant:[self frameForButton].size.height];
+    [self addConstraint:_heightConstraint];
 }
 
 - (void)layoutSubviews {
@@ -79,7 +95,6 @@
 }
 
 - (void)buttonTapped:(id)sender {
-
 	self.confirmationButton.alpha = 0.0f;
 	self.confirmationButton.frame = self.button.frame;
 	[self addSubview:self.confirmationButton];
@@ -94,6 +109,8 @@
 	[UIView animateWithDuration:0.25f animations:^{
 		self.button.frame = confirmationFrame;
 		self.confirmationButton.frame = confirmationFrame;
+        _widthConstraint.constant = confirmationFrame.size.width;
+        _heightConstraint.constant = confirmationFrame.size.height;
 	} completion:^(BOOL finished) {
 		[self.button removeFromSuperview];
 	}];
@@ -103,6 +120,32 @@
 //	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 //		[self tappedOutside:self];
 //	});
+}
+
+- (void)tappedOutside:(id)sender {
+    
+	if (!self.confirmationButton.superview) return;
+	if (self.loadingImageView.superview) return;
+    
+	self.button.alpha = 0.0f;
+	self.button.frame = self.confirmationButton.frame;
+	[self addSubview:self.button];
+    
+	CGRect buttonFrame = [self frameForButton];
+    
+    [UIView animateWithDuration:0.10f animations:^{
+		self.button.alpha = 1.0f;
+		self.confirmationButton.alpha = 0.0f;
+	} completion:nil];
+    
+	[UIView animateWithDuration:0.25f animations:^{
+		self.button.frame = buttonFrame;
+		self.confirmationButton.frame = buttonFrame;
+        _widthConstraint.constant = buttonFrame.size.width;
+        _heightConstraint.constant = buttonFrame.size.height;
+	} completion:^(BOOL finished) {
+		[self.confirmationButton removeFromSuperview];
+	}];
 }
 
 - (void)setEnabled:(BOOL)enabled {
@@ -167,33 +210,8 @@
 		[UIView animateWithDuration:0.1f animations:^{
 			self.button.alpha = 1.0f;
 			self.loadingImageView.alpha = 0.0f;
-
 		}];
 	}
-}
-
-- (void)tappedOutside:(id)sender {
-
-	if (!self.confirmationButton.superview) return;
-	if (self.loadingImageView.superview) return;
-
-	self.button.alpha = 0.0f;
-	self.button.frame = self.confirmationButton.frame;
-	[self addSubview:self.button];
-
-	CGRect buttonFrame = [self frameForButton];
-
-    [UIView animateWithDuration:0.10f animations:^{
-		self.button.alpha = 1.0f;
-		self.confirmationButton.alpha = 0.0f;
-	} completion:nil];
-    
-	[UIView animateWithDuration:0.25f animations:^{
-		self.button.frame = buttonFrame;
-		self.confirmationButton.frame = buttonFrame;
-	} completion:^(BOOL finished) {
-		[self.confirmationButton removeFromSuperview];
-	}];
 }
 
 - (UIImageView *)loadingImageView {
@@ -227,6 +245,8 @@
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state {
 	[self.button setTitle:title forState:state];
+    _widthConstraint.constant = [self frameForButton].size.width;
+    _heightConstraint.constant = [self frameForButton].size.height;
 }
 
 - (NSString *)titleForState:(UIControlState)state {
