@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet DCTConfirmationButton *storeButton;
+@property (nonatomic, weak) IBOutlet DCTConfirmationButton *storeButton2;
 @end
 
 @implementation ViewController
@@ -21,6 +22,15 @@
 	[self.storeButton setTitle:@"£4.99" forButtonState:DCTConfirmationButtonStateNormal];
 	[self.storeButton setTitle:@"Purchased" forButtonState:DCTConfirmationButtonStateConfirmed];
 	[self.storeButton setTitle:@"Buy" forButtonState:DCTConfirmationButtonStateConfirmation];
+
+	[self.storeButton2 setTitle:@"£44.99" forButtonState:DCTConfirmationButtonStateNormal];
+	[self.storeButton2 setTitle:@"Bought" forButtonState:DCTConfirmationButtonStateConfirmed];
+	[self.storeButton2 setTitle:@"Purchase" forButtonState:DCTConfirmationButtonStateConfirmation];
+}
+
+- (IBAction)reset:(id)sender {
+	[self.storeButton setButtonState:DCTConfirmationButtonStateNormal];
+	[self.storeButton2 setButtonState:DCTConfirmationButtonStateNormal];
 }
 
 - (IBAction)action:(id)sender {

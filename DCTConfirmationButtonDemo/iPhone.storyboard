@@ -30,17 +30,43 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Hd-9Z-dvF">
+                                <rect key="frame" x="280" y="550" width="40" height="30"/>
+                                <state key="normal" title="Reset">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reset:" destination="tNg-w4-i5e" eventType="touchUpInside" id="czL-a4-jOk"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-A5-3cp" customClass="DCTConfirmationButton">
+                                <rect key="frame" x="66" y="70" width="20" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thing!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IS-r2-tqv">
+                                <rect key="frame" x="96" y="69" width="48" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aTn-wh-xSB" firstAttribute="centerY" secondItem="cmh-C3-5Oa" secondAttribute="centerY" id="1H2-Yt-mCs"/>
+                            <constraint firstItem="dJt-A5-3cp" firstAttribute="top" secondItem="fdg-PB-yzr" secondAttribute="bottom" constant="50" id="4G0-ac-nCo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cmh-C3-5Oa" secondAttribute="trailing" constant="20" id="5h7-rx-YhF"/>
+                            <constraint firstItem="dJt-A5-3cp" firstAttribute="leading" secondItem="FUc-xd-n9y" secondAttribute="leadingMargin" constant="50" id="DEF-U0-3b7"/>
+                            <constraint firstItem="4IS-r2-tqv" firstAttribute="leading" secondItem="dJt-A5-3cp" secondAttribute="trailing" constant="10" id="H4E-EB-UuX"/>
                             <constraint firstAttribute="centerY" secondItem="cmh-C3-5Oa" secondAttribute="centerY" id="TrR-tc-SgM"/>
+                            <constraint firstItem="R6W-Rm-ioi" firstAttribute="top" secondItem="6Hd-9Z-dvF" secondAttribute="bottom" constant="20" id="VKw-bl-xQv"/>
+                            <constraint firstAttribute="centerX" secondItem="6Hd-9Z-dvF" secondAttribute="centerX" id="XeA-tX-Y9G"/>
                             <constraint firstItem="cmh-C3-5Oa" firstAttribute="leading" secondItem="aTn-wh-xSB" secondAttribute="trailing" constant="10" id="eSu-bi-3EU"/>
+                            <constraint firstItem="4IS-r2-tqv" firstAttribute="centerY" secondItem="dJt-A5-3cp" secondAttribute="centerY" id="gE4-6B-NRt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="storeButton" destination="cmh-C3-5Oa" id="RFa-cR-g5P"/>
+                        <outlet property="storeButton2" destination="dJt-A5-3cp" id="EXF-OM-ec5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhr-vb-Qol" userLabel="First Responder" sceneMemberID="firstResponder"/>
