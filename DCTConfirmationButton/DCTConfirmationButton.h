@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, DCTConfirmationButtonState) {
 	DCTConfirmationButtonStateConfirmed
 };
 
+IB_DESIGNABLE
 @interface DCTConfirmationButton : UIControl
 
 - (NSString *)titleForButtonState:(DCTConfirmationButtonState)buttonState;

@@ -232,4 +232,9 @@
 	[self invalidateIntrinsicContentSize];
 }
 
+-(void)prepareForInterfaceBuilder {
+	[super prepareForInterfaceBuilder];
+	[self setTitle:@"£4.99" forButtonState:DCTConfirmationButtonStateNormal];
+}
+
 @end
