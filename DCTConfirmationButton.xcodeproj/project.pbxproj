@@ -20,9 +20,9 @@
 		247B2F0C17B41EB3003D8E1F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247B2F0917B41EB3003D8E1F /* iPhone.storyboard */; };
 		247B2F0D17B41EB3003D8E1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247B2F0B17B41EB3003D8E1F /* ViewController.m */; };
 		24F3417219A3386D003585DC /* DCTConfirmationButtonInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F3417119A3386D003585DC /* DCTConfirmationButtonInternal.m */; };
-		24F3417519A33984003585DC /* DCTConfirmationButtonRotatingImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F3417319A33984003585DC /* DCTConfirmationButtonRotatingImageView.h */; };
-		24F3417619A33984003585DC /* DCTConfirmationButtonRotatingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F3417419A33984003585DC /* DCTConfirmationButtonRotatingImageView.m */; };
-		24F3417719A33984003585DC /* DCTConfirmationButtonRotatingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F3417419A33984003585DC /* DCTConfirmationButtonRotatingImageView.m */; };
+		24F3417519A33984003585DC /* DCTConfirmationButtonLoadingView.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F3417319A33984003585DC /* DCTConfirmationButtonLoadingView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		24F3417619A33984003585DC /* DCTConfirmationButtonLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F3417419A33984003585DC /* DCTConfirmationButtonLoadingView.m */; };
+		24F3417719A33984003585DC /* DCTConfirmationButtonLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F3417419A33984003585DC /* DCTConfirmationButtonLoadingView.m */; };
 		24F3417819A33990003585DC /* DCTConfirmationButtonInternal.m in Sources */ = {isa = PBXBuildFile; fileRef = 24F3417119A3386D003585DC /* DCTConfirmationButtonInternal.m */; };
 		24F3417919A33996003585DC /* DCTConfirmationButtonInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 24F3417019A3386D003585DC /* DCTConfirmationButtonInternal.h */; };
 /* End PBXBuildFile section */
@@ -80,8 +80,8 @@
 		248FC4C019A2BD6B00C5E6D1 /* DCTConfirmationButton.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DCTConfirmationButton.xcassets; sourceTree = "<group>"; };
 		24F3417019A3386D003585DC /* DCTConfirmationButtonInternal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTConfirmationButtonInternal.h; sourceTree = "<group>"; };
 		24F3417119A3386D003585DC /* DCTConfirmationButtonInternal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTConfirmationButtonInternal.m; sourceTree = "<group>"; };
-		24F3417319A33984003585DC /* DCTConfirmationButtonRotatingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTConfirmationButtonRotatingImageView.h; sourceTree = "<group>"; };
-		24F3417419A33984003585DC /* DCTConfirmationButtonRotatingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTConfirmationButtonRotatingImageView.m; sourceTree = "<group>"; };
+		24F3417319A33984003585DC /* DCTConfirmationButtonLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCTConfirmationButtonLoadingView.h; sourceTree = "<group>"; };
+		24F3417419A33984003585DC /* DCTConfirmationButtonLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCTConfirmationButtonLoadingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +138,8 @@
 				248FC4C019A2BD6B00C5E6D1 /* DCTConfirmationButton.xcassets */,
 				24F3417019A3386D003585DC /* DCTConfirmationButtonInternal.h */,
 				24F3417119A3386D003585DC /* DCTConfirmationButtonInternal.m */,
-				24F3417319A33984003585DC /* DCTConfirmationButtonRotatingImageView.h */,
-				24F3417419A33984003585DC /* DCTConfirmationButtonRotatingImageView.m */,
+				24F3417319A33984003585DC /* DCTConfirmationButtonLoadingView.h */,
+				24F3417419A33984003585DC /* DCTConfirmationButtonLoadingView.m */,
 				240DF6DD19A27B4A00DD0EF5 /* Info.plist */,
 			);
 			path = DCTConfirmationButton;
@@ -167,7 +167,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24F3417519A33984003585DC /* DCTConfirmationButtonRotatingImageView.h in Headers */,
+				24F3417519A33984003585DC /* DCTConfirmationButtonLoadingView.h in Headers */,
 				240DF6DF19A27B8200DD0EF5 /* DCTConfirmationButton.h in Headers */,
 				24F3417919A33996003585DC /* DCTConfirmationButtonInternal.h in Headers */,
 			);
@@ -308,7 +308,7 @@
 			files = (
 				240DF6E019A27B8800DD0EF5 /* DCTConfirmationButton.m in Sources */,
 				24F3417819A33990003585DC /* DCTConfirmationButtonInternal.m in Sources */,
-				24F3417719A33984003585DC /* DCTConfirmationButtonRotatingImageView.m in Sources */,
+				24F3417719A33984003585DC /* DCTConfirmationButtonLoadingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				247B2EBC17B41DAE003D8E1F /* DCTConfirmationButton.m in Sources */,
-				24F3417619A33984003585DC /* DCTConfirmationButtonRotatingImageView.m in Sources */,
+				24F3417619A33984003585DC /* DCTConfirmationButtonLoadingView.m in Sources */,
 				24F3417219A3386D003585DC /* DCTConfirmationButtonInternal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

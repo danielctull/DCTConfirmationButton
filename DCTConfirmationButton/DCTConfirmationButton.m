@@ -8,7 +8,7 @@
 
 #import "DCTConfirmationButton.h"
 #import "DCTConfirmationButtonInternal.h"
-#import "DCTConfirmationButtonRotatingImageView.h"
+#import "DCTConfirmationButtonLoadingView.h"
 
 @interface DCTConfirmationButton ()
 @property (nonatomic) UIButton *button;
@@ -222,7 +222,7 @@
 - (UIImageView *)loadingImageView {
 
 	if (!_loadingImageView) {
-		_loadingImageView = [DCTConfirmationButtonRotatingImageView new];
+		_loadingImageView = [DCTConfirmationButtonLoadingView new];
 	}
 
 	return _loadingImageView;

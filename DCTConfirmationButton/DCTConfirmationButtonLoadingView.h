@@ -1,5 +1,5 @@
 //
-//  DCTConfirmationButtonRotatingImageView.h
+//  DCTConfirmationButtonLoadingView.h
 //  DCTConfirmationButton
 //
 //  Created by Daniel Tull on 19/08/2014.
@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface DCTConfirmationButtonRotatingImageView : UIImageView
+@interface DCTConfirmationButtonLoadingView : UIImageView
 
 @end

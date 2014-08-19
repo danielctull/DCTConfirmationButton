@@ -1,14 +1,14 @@
 //
-//  DCTConfirmationButtonRotatingImageView.m
+//  DCTConfirmationButtonLoadingView.m
 //  DCTConfirmationButton
 //
 //  Created by Daniel Tull on 19/08/2014.
 //  Copyright (c) 2014 Daniel Tull. All rights reserved.
 //
 
-#import "DCTConfirmationButtonRotatingImageView.h"
+#import "DCTConfirmationButtonLoadingView.h"
 
-@implementation DCTConfirmationButtonRotatingImageView
+@implementation DCTConfirmationButtonLoadingView
 
 - (instancetype)init {
 	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
