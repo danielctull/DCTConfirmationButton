@@ -22,12 +22,19 @@
 	[self setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
 	[self setBackgroundImage:selectedImage forState:UIControlStateSelected];
 	self.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
+	self.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
 	return self;
 }
 
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+	[super willMoveToSuperview:newSuperview];
+	self.frame = newSuperview.bounds;
+}
+
 - (CGSize)intrinsicContentSize {
+	UIImage *image = [self backgroundImageForState:UIControlStateNormal];
 	CGSize size = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-	
+	size.height = image.size.height;	
 	size.width += 12.0f;
 	return size;
 }

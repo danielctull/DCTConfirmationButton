@@ -1,44 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4488.1" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="tNg-w4-i5e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tNg-w4-i5e">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3715.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="pAD-bC-7XJ">
             <objects>
                 <viewController id="tNg-w4-i5e" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fdg-PB-yzr"/>
+                        <viewControllerLayoutGuide type="bottom" id="R6W-Rm-ioi"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FUc-xd-n9y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="32e-L4-XRl" customClass="DCTConfirmationButton">
-                                <rect key="frame" x="110" y="271" width="100" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="£4.99">
-                                    <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <view contentMode="right" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-C3-5Oa" customClass="DCTConfirmationButton">
+                                <rect key="frame" x="544" y="290" width="20" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <action selector="action:" destination="tNg-w4-i5e" eventType="touchUpInside" id="b8f-L6-rdJ"/>
+                                    <action selector="action:" destination="tNg-w4-i5e" eventType="touchUpInside" id="ksD-U6-60D"/>
                                 </connections>
-                            </button>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thing for sale:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTn-wh-xSB">
+                                <rect key="frame" x="431" y="290" width="103" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aTn-wh-xSB" firstAttribute="centerY" secondItem="cmh-C3-5Oa" secondAttribute="centerY" id="1H2-Yt-mCs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cmh-C3-5Oa" secondAttribute="trailing" constant="20" id="5h7-rx-YhF"/>
+                            <constraint firstAttribute="centerY" secondItem="cmh-C3-5Oa" secondAttribute="centerY" id="TrR-tc-SgM"/>
+                            <constraint firstItem="cmh-C3-5Oa" firstAttribute="leading" secondItem="aTn-wh-xSB" secondAttribute="trailing" constant="10" id="eSu-bi-3EU"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="storeButton" destination="32e-L4-XRl" id="pxq-8s-EYp"/>
+                        <outlet property="storeButton" destination="cmh-C3-5Oa" id="RFa-cR-g5P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhr-vb-Qol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="122"/>
+            <point key="canvasLocation" x="356.25" y="128.87323943661971"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

@@ -25,14 +25,12 @@
 
 - (IBAction)action:(id)sender {
 
-	self.storeButton.buttonState = DCTConfirmationButtonStateLoading;
+	[self.storeButton setButtonState:DCTConfirmationButtonStateLoading animated:YES];
 
 	double delayInSeconds = 2.0;
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-		self.storeButton.buttonState = DCTConfirmationButtonStateConfirmed;
-		self.storeButton.enabled = NO;
-		self.storeButton.tintColor = [UIColor lightGrayColor];
+		[self.storeButton setButtonState:DCTConfirmationButtonStateConfirmed animated:YES];
 	});
 }
 
