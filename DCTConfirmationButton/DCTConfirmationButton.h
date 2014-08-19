@@ -17,11 +17,11 @@ typedef NS_ENUM(NSInteger, DCTConfirmationButtonState) {
 
 @interface DCTConfirmationButton : UIControl
 
-- (NSString *)titleForState:(DCTConfirmationButtonState)state;
-- (void)setTitle:(NSString *)title forState:(DCTConfirmationButtonState)state;
+- (NSString *)titleForButtonState:(DCTConfirmationButtonState)buttonState;
+- (void)setTitle:(NSString *)title forButtonState:(DCTConfirmationButtonState)buttonState;
 
-- (UIColor *)colorForState:(DCTConfirmationButtonState)state;
-- (void)setColor:(UIColor *)color forState:(DCTConfirmationButtonState)state;
+- (UIColor *)colorForButtonState:(DCTConfirmationButtonState)buttonState;
+- (void)setColor:(UIColor *)color forButtonState:(DCTConfirmationButtonState)buttonState;
 
 @property (nonatomic) DCTConfirmationButtonState buttonState;
 - (void)setButtonState:(DCTConfirmationButtonState)buttonState animated:(BOOL)animated;

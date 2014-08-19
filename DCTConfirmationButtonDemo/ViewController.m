@@ -18,9 +18,9 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-	[self.storeButton setTitle:@"£4.99" forState:DCTConfirmationButtonStateNormal];
-	[self.storeButton setTitle:@"Purchased" forState:DCTConfirmationButtonStateConfirmed];
-	[self.storeButton setTitle:@"Buy" forState:DCTConfirmationButtonStateConfirmation];
+	[self.storeButton setTitle:@"£4.99" forButtonState:DCTConfirmationButtonStateNormal];
+	[self.storeButton setTitle:@"Purchased" forButtonState:DCTConfirmationButtonStateConfirmed];
+	[self.storeButton setTitle:@"Buy" forButtonState:DCTConfirmationButtonStateConfirmation];
 }
 
 - (IBAction)action:(id)sender {

@@ -41,7 +41,7 @@
 
 - (void)layoutSubviews {
 	[super layoutSubviews];
-	UIView *view = [self viewForState:self.buttonState];
+	UIView *view = [self viewForButtonState:self.buttonState];
 	[self addSubview:view];
 	self.currentView = view;
 }
@@ -115,7 +115,7 @@
 #pragma clang diagnostic pop
 
 	UIView *oldView = self.currentView;
-	UIView *newView = [self viewForState:buttonState];
+	UIView *newView = [self viewForButtonState:buttonState];
 	newView.alpha = 0.0f;
 	[self addSubview:newView];
 	self.currentView = newView;
@@ -132,16 +132,15 @@
 	}];
 }
 
-- (void)setTitle:(NSString *)title forState:(DCTConfirmationButtonState)state {
-	UIView *view = [self viewForState:state];
+- (void)setTitle:(NSString *)title forButtonState:(DCTConfirmationButtonState)buttonState {
+	UIView *view = [self viewForButtonState:buttonState];
 	if ([view isKindOfClass:[UIButton class]]) {
 		UIButton *button = (UIButton *)view;
 		[button setTitle:title forState:UIControlStateNormal];
 	}
 }
-
-- (NSString *)titleForState:(DCTConfirmationButtonState)state {
-	UIView *view = [self viewForState:state];
+- (NSString *)titleForButtonState:(DCTConfirmationButtonState)buttonState {
+	UIView *view = [self viewForButtonState:buttonState];
 	if ([view isKindOfClass:[UIButton class]]) {
 		UIButton *button = (UIButton *)view;
 		return [button titleForState:UIControlStateNormal];
@@ -150,8 +149,8 @@
 	return nil;
 }
 
-- (void)setColor:(UIColor *)color forState:(DCTConfirmationButtonState)state {
-	UIView *view = [self viewForState:state];
+- (void)setColor:(UIColor *)color forButtonState:(DCTConfirmationButtonState)buttonState {
+	UIView *view = [self viewForButtonState:buttonState];
 	view.tintColor = color;
 	if ([view isKindOfClass:[UIButton class]]) {
 		UIButton *button = (UIButton *)view;
@@ -161,8 +160,8 @@
 	}
 }
 
-- (UIColor *)colorForState:(DCTConfirmationButtonState)state {
-	UIView *view = [self viewForState:state];
+- (UIColor *)colorForButtonState:(DCTConfirmationButtonState)buttonState {
+	UIView *view = [self viewForButtonState:buttonState];
 	return view.tintColor;
 }
 
@@ -170,10 +169,10 @@
 
 - (void)setupDefaultColors {
 	UIColor *greenColor = [UIColor colorWithRed:0.141f green:0.667f blue:0.169f alpha:1.0f];
-	[self setColor:self.tintColor forState:DCTConfirmationButtonStateNormal];
-	[self setColor:self.tintColor forState:DCTConfirmationButtonStateLoading];
-	[self setColor:[UIColor lightGrayColor] forState:DCTConfirmationButtonStateConfirmed];
-	[self setColor:greenColor forState:DCTConfirmationButtonStateConfirmation];
+	[self setColor:self.tintColor forButtonState:DCTConfirmationButtonStateNormal];
+	[self setColor:self.tintColor forButtonState:DCTConfirmationButtonStateLoading];
+	[self setColor:[UIColor lightGrayColor] forButtonState:DCTConfirmationButtonStateConfirmed];
+	[self setColor:greenColor forButtonState:DCTConfirmationButtonStateConfirmation];
 }
 
 - (IBAction)buttonTapped:(id)sender {
@@ -185,7 +184,7 @@
 	[self setButtonState:DCTConfirmationButtonStateNormal animated:YES];
 }
 
-- (UIView *)viewForState:(DCTConfirmationButtonState)state {
+- (UIView *)viewForButtonState:(DCTConfirmationButtonState)state {
 	UIView *view = [self.views objectForKey:@(state)];
 	
 	return view;
