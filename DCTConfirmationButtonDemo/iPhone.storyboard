@@ -39,7 +39,7 @@
                                     <action selector="reset:" destination="tNg-w4-i5e" eventType="touchUpInside" id="czL-a4-jOk"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-A5-3cp" customClass="DCTConfirmationButton">
+                            <view contentMode="left" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-A5-3cp" customClass="DCTConfirmationButton">
                                 <rect key="frame" x="66" y="70" width="20" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
