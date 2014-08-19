@@ -42,6 +42,9 @@
                             <view contentMode="left" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-A5-3cp" customClass="DCTConfirmationButton">
                                 <rect key="frame" x="66" y="70" width="20" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="action2:" destination="tNg-w4-i5e" eventType="touchUpInside" id="9GV-ec-oWM"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thing!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IS-r2-tqv">
                                 <rect key="frame" x="96" y="69" width="48" height="21"/>
@@ -66,7 +69,7 @@
                     </view>
                     <connections>
                         <outlet property="storeButton" destination="cmh-C3-5Oa" id="RFa-cR-g5P"/>
-                        <outlet property="storeButton2" destination="dJt-A5-3cp" id="EXF-OM-ec5"/>
+                        <outlet property="storeButton2" destination="dJt-A5-3cp" id="ye0-h5-fc4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhr-vb-Qol" userLabel="First Responder" sceneMemberID="firstResponder"/>
