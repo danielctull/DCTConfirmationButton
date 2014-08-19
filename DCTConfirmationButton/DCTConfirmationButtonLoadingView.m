@@ -74,6 +74,9 @@
 - (void)setContentMode:(UIViewContentMode)contentMode {
 	[super setContentMode:contentMode];
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wassign-enum"
+
 	UIViewAutoresizing sizing = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
 	switch (contentMode) {
 
@@ -101,8 +104,10 @@
 		case UIViewContentModeScaleToFill:
 			sizing = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	}
-
+#pragma clang diagnostic pop
+	
 	self.autoresizingMask = sizing;
+
 }
 
 @end

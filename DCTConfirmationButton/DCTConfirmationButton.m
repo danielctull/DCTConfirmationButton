@@ -65,31 +65,11 @@
 }
 
 - (void)addTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
-	[self.confirmationButton addTarget:target action:action forControlEvents:controlEvents];
+	[super addTarget:target action:action forControlEvents:controlEvents];
 }
 
 - (void)removeTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
-	[self.confirmationButton removeTarget:target action:action forControlEvents:controlEvents];
-}
-
-- (NSSet *)allTargets {
-	return self.confirmationButton.allTargets;
-}
-
-- (UIControlEvents)allControlEvents {
-	return self.confirmationButton.allControlEvents;
-}
-
-- (NSArray *)actionsForTarget:(id)target forControlEvent:(UIControlEvents)controlEvent {
-	return [self.confirmationButton actionsForTarget:target forControlEvent:controlEvent];
-}
-
-- (void)sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-	[self.confirmationButton sendAction:action to:target forEvent:event];
-}
-
-- (void)sendActionsForControlEvents:(UIControlEvents)controlEvents {
-	[self.confirmationButton sendActionsForControlEvents:controlEvents];
+	[super removeTarget:target action:action forControlEvents:controlEvents];
 }
 
 #pragma mark - DCTConfirmationButton
@@ -180,6 +160,10 @@
 	self.confirmationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(reset:) userInfo:nil repeats:NO];
 }
 
+- (IBAction)confirmationButtonTapped:(id)sender {
+	[self sendActionsForControlEvents:UIControlEventTouchUpInside];
+}
+
 - (IBAction)reset:(id)sender {
 	[self setButtonState:DCTConfirmationButtonStateNormal animated:YES];
 }
@@ -204,6 +188,7 @@
 
 	if (!_confirmationButton) {
 		_confirmationButton = [[DCTConfirmationButtonInternal alloc] initWithFrame:self.bounds];
+		[self.confirmationButton addTarget:self	action:@selector(confirmationButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 	}
 
 	return _confirmationButton;

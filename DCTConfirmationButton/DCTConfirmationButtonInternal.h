@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Daniel Tull. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface DCTConfirmationButtonInternal : UIButton
 
