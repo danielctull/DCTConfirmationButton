@@ -8,15 +8,22 @@
 
 @import UIKit;
 
-@interface DCTConfirmationButton : UIButton
+typedef NS_ENUM(NSInteger, DCTConfirmationButtonState) {
+	DCTConfirmationButtonStateNormal,
+	DCTConfirmationButtonStateConfirmation,
+	DCTConfirmationButtonStateLoading,
+	DCTConfirmationButtonStateConfirmed
+};
 
-- (NSString *)confirmationTitleForState:(UIControlState)state;
-- (void)setConfirmationTitle:(NSString *)title forState:(UIControlState)state;
-- (UIColor *)confirmationTitleColorForState:(UIControlState)state;
-- (void)setConfirmationTitleColor:(UIColor *)color forState:(UIControlState)state;
+@interface DCTConfirmationButton : UIControl
 
-@property (nonatomic) UIColor *confirmationTintColor;
+- (NSString *)titleForState:(DCTConfirmationButtonState)state;
+- (void)setTitle:(NSString *)title forState:(DCTConfirmationButtonState)state;
 
-@property (nonatomic, getter=isLoading) BOOL loading;
+- (UIColor *)colorForState:(DCTConfirmationButtonState)state;
+- (void)setColor:(UIColor *)color forState:(DCTConfirmationButtonState)state;
+
+@property (nonatomic) DCTConfirmationButtonState buttonState;
+- (void)setButtonState:(DCTConfirmationButtonState)buttonState animated:(BOOL)animated;
 
 @end

@@ -18,19 +18,19 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
-	[self.storeButton setTitle:@"£4.99" forState:UIControlStateNormal];
-	[self.storeButton setTitle:@"Purchased" forState:UIControlStateDisabled];
-	[self.storeButton setConfirmationTitle:@"Buy" forState:UIControlStateNormal];
+	[self.storeButton setTitle:@"£4.99" forState:DCTConfirmationButtonStateNormal];
+	[self.storeButton setTitle:@"Purchased" forState:DCTConfirmationButtonStateConfirmed];
+	[self.storeButton setTitle:@"Buy" forState:DCTConfirmationButtonStateConfirmation];
 }
 
 - (IBAction)action:(id)sender {
 
-	self.storeButton.loading = YES;
+	self.storeButton.buttonState = DCTConfirmationButtonStateLoading;
 
 	double delayInSeconds = 2.0;
 	dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
 	dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-		self.storeButton.loading = NO;
+		self.storeButton.buttonState = DCTConfirmationButtonStateConfirmed;
 		self.storeButton.enabled = NO;
 		self.storeButton.tintColor = [UIColor lightGrayColor];
 	});
