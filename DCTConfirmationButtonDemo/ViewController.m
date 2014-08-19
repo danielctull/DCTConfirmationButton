@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Daniel Tull. All rights reserved.
 //
 
+@import DCTConfirmationButton;
 #import "ViewController.h"
-#import <DCTConfirmationButton/DCTConfirmationButton.h>
 
 @interface ViewController ()
 @property (nonatomic, weak) IBOutlet DCTConfirmationButton *storeButton;

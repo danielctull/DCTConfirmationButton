@@ -189,7 +189,7 @@
 - (UIImageView *)loadingImageView {
 
 	if (!_loadingImageView) {
-		UIImage *image = [[UIImage imageNamed:@"DCTConfirmationButtonLoading"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *image = [UIImage imageNamed:@"DCTConfirmationButtonLoading" inBundle:self.bundle compatibleWithTraitCollection:nil];
 		_loadingImageView = [[UIImageView alloc] initWithImage:image];
 	}
 
@@ -204,8 +204,8 @@
 		_button = [[UIButton alloc] initWithFrame:self.bounds];
 		[_button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
-		UIImage *image = [[UIImage imageNamed:@"DCTConfirmationButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-		UIImage *selectedImage = [[UIImage imageNamed:@"DCTConfirmationButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *image = [UIImage imageNamed:@"DCTConfirmationButtonBackground" inBundle:self.bundle compatibleWithTraitCollection:nil];
+		UIImage *selectedImage = [UIImage imageNamed:@"DCTConfirmationButtonBackgroundSelected" inBundle:self.bundle compatibleWithTraitCollection:nil];
 		[_button setBackgroundImage:image forState:UIControlStateNormal];
 		[_button setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
 		[_button setBackgroundImage:selectedImage forState:UIControlStateSelected];
@@ -247,8 +247,8 @@
 	if (!_confirmationButton) {
 		_confirmationButton = [[UIButton alloc] initWithFrame:self.bounds];
 
-		UIImage *image = [[UIImage imageNamed:@"DCTConfirmationButtonBackground"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-		UIImage *selectedImage = [[UIImage imageNamed:@"DCTConfirmationButtonBackgroundSelected"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+		UIImage *image = [UIImage imageNamed:@"DCTConfirmationButtonBackground" inBundle:self.bundle compatibleWithTraitCollection:nil];
+		UIImage *selectedImage = [UIImage imageNamed:@"DCTConfirmationButtonBackgroundSelected" inBundle:self.bundle compatibleWithTraitCollection:nil];
 		[_confirmationButton setBackgroundImage:image forState:UIControlStateNormal];
 		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateHighlighted];
 		[_confirmationButton setBackgroundImage:selectedImage forState:UIControlStateSelected];
@@ -288,6 +288,10 @@
 
 - (void)removeTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents {
 	[self.confirmationButton removeTarget:target action:action forControlEvents:controlEvents];
+}
+
+- (NSBundle *)bundle {
+	return [NSBundle bundleForClass:[self class]];
 }
 
 @end

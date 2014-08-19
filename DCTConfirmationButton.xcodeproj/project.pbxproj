@@ -7,22 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		247B2EB517B41DAE003D8E1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B2EB417B41DAE003D8E1F /* Foundation.framework */; };
+		240DF6DF19A27B8200DD0EF5 /* DCTConfirmationButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 247B2EB917B41DAE003D8E1F /* DCTConfirmationButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		240DF6E019A27B8800DD0EF5 /* DCTConfirmationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 247B2EBB17B41DAE003D8E1F /* DCTConfirmationButton.m */; };
+		240DF6E119A27BD500DD0EF5 /* DCTConfirmationButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 240DF6C719A27B0500DD0EF5 /* DCTConfirmationButton.framework */; };
+		240DF6E219A27BD500DD0EF5 /* DCTConfirmationButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 240DF6C719A27B0500DD0EF5 /* DCTConfirmationButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2468D51319A32CD200BDC6E5 /* DCTConfirmationButton.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 248FC4C019A2BD6B00C5E6D1 /* DCTConfirmationButton.xcassets */; };
 		247B2EBA17B41DAE003D8E1F /* DCTConfirmationButton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 247B2EB917B41DAE003D8E1F /* DCTConfirmationButton.h */; };
 		247B2EBC17B41DAE003D8E1F /* DCTConfirmationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 247B2EBB17B41DAE003D8E1F /* DCTConfirmationButton.m */; };
-		247B2EDF17B41E6C003D8E1F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B2EB417B41DAE003D8E1F /* Foundation.framework */; };
-		247B2EE117B41E6C003D8E1F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B2EE017B41E6C003D8E1F /* CoreGraphics.framework */; };
-		247B2EE217B41E6C003D8E1F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B2EC517B41DAE003D8E1F /* UIKit.framework */; };
 		247B2EEA17B41E6C003D8E1F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 247B2EE917B41E6C003D8E1F /* main.m */; };
 		247B2EEE17B41E6C003D8E1F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 247B2EED17B41E6C003D8E1F /* AppDelegate.m */; };
 		247B2EF017B41E6C003D8E1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247B2EEF17B41E6C003D8E1F /* Images.xcassets */; };
 		247B2F0C17B41EB3003D8E1F /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 247B2F0917B41EB3003D8E1F /* iPhone.storyboard */; };
 		247B2F0D17B41EB3003D8E1F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 247B2F0B17B41EB3003D8E1F /* ViewController.m */; };
-		247B2F0E17B41F3B003D8E1F /* libDCTConfirmationButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 247B2EB117B41DAE003D8E1F /* libDCTConfirmationButton.a */; };
-		247B2F1017B41F61003D8E1F /* DCTConfirmationButton.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 247B2F0F17B41F61003D8E1F /* DCTConfirmationButton.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		240DF6E319A27BD500DD0EF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 247B2EA917B41DAE003D8E1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 240DF6C619A27B0500DD0EF5;
+			remoteInfo = "DCTConfirmationButton iOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		240DF6E519A27BD500DD0EF5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				240DF6E219A27BD500DD0EF5 /* DCTConfirmationButton.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		247B2EAF17B41DAE003D8E1F /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -36,15 +56,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		240DF6C719A27B0500DD0EF5 /* DCTConfirmationButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DCTConfirmationButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		240DF6DD19A27B4A00DD0EF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		244F132D17FEB1EB0016E94E /* Architectures.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Architectures.xcconfig; sourceTree = "<group>"; };
 		247B2EB117B41DAE003D8E1F /* libDCTConfirmationButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCTConfirmationButton.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		247B2EB417B41DAE003D8E1F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		247B2EB917B41DAE003D8E1F /* DCTConfirmationButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCTConfirmationButton.h; sourceTree = "<group>"; };
 		247B2EBB17B41DAE003D8E1F /* DCTConfirmationButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCTConfirmationButton.m; sourceTree = "<group>"; };
-		247B2EC217B41DAE003D8E1F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		247B2EC517B41DAE003D8E1F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		247B2EDE17B41E6C003D8E1F /* DCTConfirmationButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCTConfirmationButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		247B2EE017B41E6C003D8E1F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		247B2EE517B41E6C003D8E1F /* DCTConfirmationButtonDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCTConfirmationButtonDemo-Info.plist"; sourceTree = "<group>"; };
 		247B2EE917B41E6C003D8E1F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		247B2EEC17B41E6C003D8E1F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -53,15 +71,21 @@
 		247B2F0917B41EB3003D8E1F /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		247B2F0A17B41EB3003D8E1F /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		247B2F0B17B41EB3003D8E1F /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		247B2F0F17B41F61003D8E1F /* DCTConfirmationButton.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DCTConfirmationButton.xcassets; sourceTree = "<group>"; };
+		248FC4C019A2BD6B00C5E6D1 /* DCTConfirmationButton.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DCTConfirmationButton.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		240DF6C319A27B0500DD0EF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		247B2EAE17B41DAE003D8E1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247B2EB517B41DAE003D8E1F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,10 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				247B2F0E17B41F3B003D8E1F /* libDCTConfirmationButton.a in Frameworks */,
-				247B2EE117B41E6C003D8E1F /* CoreGraphics.framework in Frameworks */,
-				247B2EE217B41E6C003D8E1F /* UIKit.framework in Frameworks */,
-				247B2EDF17B41E6C003D8E1F /* Foundation.framework in Frameworks */,
+				240DF6E119A27BD500DD0EF5 /* DCTConfirmationButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,10 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				244F132D17FEB1EB0016E94E /* Architectures.xcconfig */,
-				247B2F0F17B41F61003D8E1F /* DCTConfirmationButton.xcassets */,
 				247B2EB617B41DAE003D8E1F /* DCTConfirmationButton */,
 				247B2EE317B41E6C003D8E1F /* DCTConfirmationButtonDemo */,
-				247B2EB317B41DAE003D8E1F /* Frameworks */,
 				247B2EB217B41DAE003D8E1F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,19 +115,9 @@
 			children = (
 				247B2EB117B41DAE003D8E1F /* libDCTConfirmationButton.a */,
 				247B2EDE17B41E6C003D8E1F /* DCTConfirmationButtonDemo.app */,
+				240DF6C719A27B0500DD0EF5 /* DCTConfirmationButton.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		247B2EB317B41DAE003D8E1F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				247B2EB417B41DAE003D8E1F /* Foundation.framework */,
-				247B2EC217B41DAE003D8E1F /* XCTest.framework */,
-				247B2EC517B41DAE003D8E1F /* UIKit.framework */,
-				247B2EE017B41E6C003D8E1F /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		247B2EB617B41DAE003D8E1F /* DCTConfirmationButton */ = {
@@ -116,6 +125,8 @@
 			children = (
 				247B2EB917B41DAE003D8E1F /* DCTConfirmationButton.h */,
 				247B2EBB17B41DAE003D8E1F /* DCTConfirmationButton.m */,
+				248FC4C019A2BD6B00C5E6D1 /* DCTConfirmationButton.xcassets */,
+				240DF6DD19A27B4A00DD0EF5 /* Info.plist */,
 			);
 			path = DCTConfirmationButton;
 			sourceTree = "<group>";
@@ -137,7 +148,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		240DF6C419A27B0500DD0EF5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240DF6DF19A27B8200DD0EF5 /* DCTConfirmationButton.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		240DF6C619A27B0500DD0EF5 /* DCTConfirmationButton iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 240DF6DB19A27B0500DD0EF5 /* Build configuration list for PBXNativeTarget "DCTConfirmationButton iOS" */;
+			buildPhases = (
+				240DF6C219A27B0500DD0EF5 /* Sources */,
+				240DF6C319A27B0500DD0EF5 /* Frameworks */,
+				240DF6C419A27B0500DD0EF5 /* Headers */,
+				240DF6C519A27B0500DD0EF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DCTConfirmationButton iOS";
+			productName = "DCTConfirmationButton iOS";
+			productReference = 240DF6C719A27B0500DD0EF5 /* DCTConfirmationButton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		247B2EB017B41DAE003D8E1F /* DCTConfirmationButton */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 247B2ED417B41DAE003D8E1F /* Build configuration list for PBXNativeTarget "DCTConfirmationButton" */;
@@ -163,10 +203,12 @@
 				247B2EDA17B41E6C003D8E1F /* Sources */,
 				247B2EDB17B41E6C003D8E1F /* Frameworks */,
 				247B2EDC17B41E6C003D8E1F /* Resources */,
+				240DF6E519A27BD500DD0EF5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				240DF6E419A27BD500DD0EF5 /* PBXTargetDependency */,
 			);
 			name = DCTConfirmationButtonDemo;
 			productName = DCTConfirmationButtonDemo;
@@ -181,6 +223,11 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Daniel Tull";
+				TargetAttributes = {
+					240DF6C619A27B0500DD0EF5 = {
+						CreatedOnToolsVersion = 6.0;
+					};
+				};
 			};
 			buildConfigurationList = 247B2EAC17B41DAE003D8E1F /* Build configuration list for PBXProject "DCTConfirmationButton" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -196,18 +243,26 @@
 			targets = (
 				247B2EB017B41DAE003D8E1F /* DCTConfirmationButton */,
 				247B2EDD17B41E6C003D8E1F /* DCTConfirmationButtonDemo */,
+				240DF6C619A27B0500DD0EF5 /* DCTConfirmationButton iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		240DF6C519A27B0500DD0EF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2468D51319A32CD200BDC6E5 /* DCTConfirmationButton.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		247B2EDC17B41E6C003D8E1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				247B2F0C17B41EB3003D8E1F /* iPhone.storyboard in Resources */,
 				247B2EF017B41E6C003D8E1F /* Images.xcassets in Resources */,
-				247B2F1017B41F61003D8E1F /* DCTConfirmationButton.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +286,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		240DF6C219A27B0500DD0EF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240DF6E019A27B8800DD0EF5 /* DCTConfirmationButton.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		247B2EAD17B41DAE003D8E1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,7 +314,67 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		240DF6E419A27BD500DD0EF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 240DF6C619A27B0500DD0EF5 /* DCTConfirmationButton iOS */;
+			targetProxy = 240DF6E319A27BD500DD0EF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		240DF6D719A27B0500DD0EF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = DCTConfirmationButton/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DCTConfirmationButton;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		240DF6D819A27B0500DD0EF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = DCTConfirmationButton/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DCTConfirmationButton;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		247B2ED217B41DAE003D8E1F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -356,6 +479,8 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DCTConfirmationButtonDemo/DCTConfirmationButtonDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -374,6 +499,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				INFOPLIST_FILE = "DCTConfirmationButtonDemo/DCTConfirmationButtonDemo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -383,6 +510,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		240DF6DB19A27B0500DD0EF5 /* Build configuration list for PBXNativeTarget "DCTConfirmationButton iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				240DF6D719A27B0500DD0EF5 /* Debug */,
+				240DF6D819A27B0500DD0EF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		247B2EAC17B41DAE003D8E1F /* Build configuration list for PBXProject "DCTConfirmationButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
