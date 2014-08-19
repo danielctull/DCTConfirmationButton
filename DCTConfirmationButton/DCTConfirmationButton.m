@@ -120,7 +120,7 @@
 	[self addSubview:newView];
 	self.currentView = newView;
 
-	NSTimeInterval duration = animated ? 0.3f : 0.0f;
+	NSTimeInterval duration = animated ? 0.5f : 0.0f;
 	[UIView animateWithDuration:duration delay:0.0f usingSpringWithDamping:1.0f initialSpringVelocity:0.0f options:UIViewAnimationOptionBeginFromCurrentState animations:^{
 
 		[self.superview layoutIfNeeded];
