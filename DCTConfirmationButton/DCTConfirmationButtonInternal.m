@@ -32,10 +32,17 @@
 }
 
 - (CGSize)intrinsicContentSize {
-	UIImage *image = [self backgroundImageForState:UIControlStateNormal];
-	CGSize size = [self systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-	size.height = image.size.height;	
-	size.width += 12.0f;
+
+	NSDictionary *attributes = @{NSFontAttributeName : self.titleLabel.font};
+	CGSize paddingSize = [@"..." sizeWithAttributes:attributes];
+	CGFloat padding = MAX(floorf(paddingSize.width), 12.0f);
+
+	NSString *text = [self titleForState:self.state];
+	CGSize size = [text sizeWithAttributes:attributes];
+
+	size.width += padding;
+	size.height += padding;
+
 	return size;
 }
 

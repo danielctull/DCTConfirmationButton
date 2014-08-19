@@ -2,12 +2,15 @@
   "images" : [
     {
       "resizing" : {
-        "mode" : "3-part-horizontal",
+        "mode" : "9-part",
         "center" : {
           "mode" : "fill",
-          "width" : 1
+          "width" : 1,
+          "height" : 1
         },
         "capInsets" : {
+          "bottom" : 3,
+          "top" : 3,
           "right" : 3,
           "left" : 3
         }
@@ -18,13 +21,16 @@
     },
     {
       "resizing" : {
-        "mode" : "3-part-horizontal",
+        "mode" : "9-part",
         "center" : {
           "mode" : "fill",
-          "width" : 1
+          "width" : 1,
+          "height" : 1
         },
         "capInsets" : {
-          "right" : 6,
+          "bottom" : 6,
+          "top" : 6,
+          "right" : 7,
           "left" : 6
         }
       },
