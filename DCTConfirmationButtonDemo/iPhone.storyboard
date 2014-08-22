@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tNg-w4-i5e">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="right" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-C3-5Oa" customClass="DCTConfirmationButton">
-                                <rect key="frame" x="544" y="290" width="20" height="20"/>
+                                <rect key="frame" x="560" y="290" width="20" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="action:" destination="tNg-w4-i5e" eventType="touchUpInside" id="ksD-U6-60D"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thing for sale:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTn-wh-xSB">
-                                <rect key="frame" x="431" y="290" width="103" height="20"/>
+                                <rect key="frame" x="447" y="290" width="103" height="20"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,14 +40,14 @@
                                 </connections>
                             </button>
                             <view contentMode="left" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-A5-3cp" customClass="DCTConfirmationButton">
-                                <rect key="frame" x="66" y="70" width="20" height="20"/>
+                                <rect key="frame" x="50" y="70" width="20" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="action:" destination="tNg-w4-i5e" eventType="touchUpInside" id="sx6-2q-cOH"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thing!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IS-r2-tqv">
-                                <rect key="frame" x="96" y="69" width="48" height="21"/>
+                                <rect key="frame" x="80" y="69" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -57,8 +57,8 @@
                         <constraints>
                             <constraint firstItem="aTn-wh-xSB" firstAttribute="centerY" secondItem="cmh-C3-5Oa" secondAttribute="centerY" id="1H2-Yt-mCs"/>
                             <constraint firstItem="dJt-A5-3cp" firstAttribute="top" secondItem="fdg-PB-yzr" secondAttribute="bottom" constant="50" id="4G0-ac-nCo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cmh-C3-5Oa" secondAttribute="trailing" constant="20" id="5h7-rx-YhF"/>
-                            <constraint firstItem="dJt-A5-3cp" firstAttribute="leading" secondItem="FUc-xd-n9y" secondAttribute="leadingMargin" constant="50" id="DEF-U0-3b7"/>
+                            <constraint firstAttribute="trailing" secondItem="cmh-C3-5Oa" secondAttribute="trailing" constant="20" id="5h7-rx-YhF"/>
+                            <constraint firstItem="dJt-A5-3cp" firstAttribute="leading" secondItem="FUc-xd-n9y" secondAttribute="leading" constant="50" id="DEF-U0-3b7"/>
                             <constraint firstItem="4IS-r2-tqv" firstAttribute="leading" secondItem="dJt-A5-3cp" secondAttribute="trailing" constant="10" id="H4E-EB-UuX"/>
                             <constraint firstAttribute="centerY" secondItem="cmh-C3-5Oa" secondAttribute="centerY" id="TrR-tc-SgM"/>
                             <constraint firstItem="R6W-Rm-ioi" firstAttribute="top" secondItem="6Hd-9Z-dvF" secondAttribute="bottom" constant="20" id="VKw-bl-xQv"/>

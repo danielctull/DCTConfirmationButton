@@ -8,6 +8,15 @@
 
 @import UIKit;
 
+//! Project version number for DCTConfirmationButton.
+FOUNDATION_EXPORT double DCTConfirmationButtonVersionNumber;
+
+//! Project version string for DCTConfirmationButton.
+FOUNDATION_EXPORT const unsigned char DCTConfirmationButtonVersionString[];
+
+// In this header, you should import all the public headers of your framework using statements like #import <DCTConfirmationButton/PublicHeader.h>
+#import <DCTConfirmationButton/DCTConfirmationButtonLoadingView.h>
+
 typedef NS_ENUM(NSInteger, DCTConfirmationButtonState) {
 	DCTConfirmationButtonStateNormal,
 	DCTConfirmationButtonStateConfirmation,
