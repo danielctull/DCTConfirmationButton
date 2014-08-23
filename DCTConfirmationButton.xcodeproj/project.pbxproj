@@ -114,7 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				247B2EB617B41DAE003D8E1F /* DCTConfirmationButton */,
-				247B2EE317B41E6C003D8E1F /* DCTConfirmationButtonDemo */,
+				247B2EE317B41E6C003D8E1F /* DCTConfirmationButton Demo */,
 				2439CF7E19A77ACE006FF08A /* Configurations */,
 				247B2EB217B41DAE003D8E1F /* Products */,
 			);
@@ -144,7 +144,7 @@
 			path = DCTConfirmationButton;
 			sourceTree = "<group>";
 		};
-		247B2EE317B41E6C003D8E1F /* DCTConfirmationButtonDemo */ = {
+		247B2EE317B41E6C003D8E1F /* DCTConfirmationButton Demo */ = {
 			isa = PBXGroup;
 			children = (
 				247B2EEC17B41E6C003D8E1F /* AppDelegate.h */,
@@ -156,7 +156,6 @@
 				247B2F0A17B41EB3003D8E1F /* ViewController.h */,
 				247B2F0B17B41EB3003D8E1F /* ViewController.m */,
 			);
-			name = DCTConfirmationButtonDemo;
 			path = "DCTConfirmationButton Demo";
 			sourceTree = "<group>";
 		};

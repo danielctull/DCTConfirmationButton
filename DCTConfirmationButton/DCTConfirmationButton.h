@@ -8,10 +8,8 @@
 
 @import UIKit;
 
-//! Project version number for DCTConfirmationButton.
+//! Project version number and string for DCTConfirmationButton.
 FOUNDATION_EXPORT double DCTConfirmationButtonVersionNumber;
-
-//! Project version string for DCTConfirmationButton.
 FOUNDATION_EXPORT const unsigned char DCTConfirmationButtonVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <DCTConfirmationButton/PublicHeader.h>
