@@ -301,7 +301,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2439CF8219A77ACE006FF08A /* iOS Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -313,7 +312,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2439CF8219A77ACE006FF08A /* iOS Framework.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
