@@ -10,10 +10,22 @@
 
 @implementation DCTConfirmationButtonInternal
 
+- (instancetype)initWithCoder:(NSCoder *)coder {
+	self = [super initWithCoder:coder];
+	if (!self) return nil;
+	[self sharedInit];
+	return self;
+
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
 	self = [super initWithFrame:frame];
 	if (!self) return nil;
+	[self sharedInit];
+	return self;
+}
 
+- (void)sharedInit {
 	NSBundle *bundle = [NSBundle bundleForClass:[self class]];
 
 	UIImage *image = [UIImage imageNamed:@"DCTConfirmationButtonBackground" inBundle:bundle compatibleWithTraitCollection:nil];
@@ -23,7 +35,6 @@
 	[self setBackgroundImage:selectedImage forState:UIControlStateSelected];
 	self.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleSubheadline];
 	self.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-	return self;
 }
 
 - (void)willMoveToSuperview:(UIView *)newSuperview {
