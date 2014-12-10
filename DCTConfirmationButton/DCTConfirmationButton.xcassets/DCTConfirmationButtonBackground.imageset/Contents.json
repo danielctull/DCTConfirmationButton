@@ -30,13 +30,32 @@
         "capInsets" : {
           "bottom" : 6,
           "top" : 6,
-          "right" : 7,
+          "right" : 6,
           "left" : 6
         }
       },
       "idiom" : "universal",
       "filename" : "DCTStoreButtonBackground@2x.png",
       "scale" : "2x"
+    },
+    {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "fill",
+          "width" : 1,
+          "height" : 1
+        },
+        "capInsets" : {
+          "bottom" : 9,
+          "top" : 9,
+          "right" : 9,
+          "left" : 9
+        }
+      },
+      "idiom" : "universal",
+      "filename" : "DCTStoreButtonBackground@3x.png",
+      "scale" : "3x"
     }
   ],
   "info" : {
