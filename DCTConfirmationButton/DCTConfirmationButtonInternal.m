@@ -42,7 +42,16 @@
 	self.frame = newSuperview.bounds;
 }
 
+- (void)setHidden:(BOOL)hidden {
+	[super setHidden:hidden];
+	[self invalidateIntrinsicContentSize];
+}
+
 - (CGSize)intrinsicContentSize {
+
+	if (self.hidden) {
+		return CGSizeZero;
+	}
 
 	NSDictionary *attributes = @{NSFontAttributeName : self.titleLabel.font};
 	CGSize paddingSize = [@"..." sizeWithAttributes:attributes];
