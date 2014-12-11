@@ -83,6 +83,10 @@
 	[self.confirmationTimer invalidate];
 	self.confirmationTimer = nil;
 
+	if (buttonState == DCTConfirmationButtonStateConfirmation) {
+		self.confirmationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(reset:) userInfo:nil repeats:NO];
+	}
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdirect-ivar-access"
 
@@ -157,7 +161,6 @@
 
 - (IBAction)buttonTapped:(id)sender {
 	[self setButtonState:DCTConfirmationButtonStateConfirmation animated:YES];
-	self.confirmationTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(reset:) userInfo:nil repeats:NO];
 }
 
 - (IBAction)confirmationButtonTapped:(id)sender {
