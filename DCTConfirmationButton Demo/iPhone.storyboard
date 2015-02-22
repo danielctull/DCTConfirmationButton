@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tNg-w4-i5e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pqV-bi-gR8">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--DCTConfirmationButton-->
         <scene sceneID="pAD-bC-7XJ">
             <objects>
                 <viewController id="tNg-w4-i5e" customClass="ViewController" sceneMemberID="viewController">
@@ -40,14 +39,14 @@
                                 </connections>
                             </button>
                             <view contentMode="left" placeholderIntrinsicWidth="20" placeholderIntrinsicHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="dJt-A5-3cp" customClass="DCTConfirmationButton">
-                                <rect key="frame" x="50" y="70" width="20" height="20"/>
+                                <rect key="frame" x="50" y="114" width="20" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="action:" destination="tNg-w4-i5e" eventType="touchUpInside" id="sx6-2q-cOH"/>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thing!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IS-r2-tqv">
-                                <rect key="frame" x="80" y="69" width="48" height="21"/>
+                                <rect key="frame" x="80" y="113" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -67,6 +66,7 @@
                             <constraint firstItem="4IS-r2-tqv" firstAttribute="centerY" secondItem="dJt-A5-3cp" secondAttribute="centerY" id="gE4-6B-NRt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="DCTConfirmationButton" id="iZZ-cc-Rud"/>
                     <connections>
                         <outlet property="storeButton" destination="cmh-C3-5Oa" id="RFa-cR-g5P"/>
                         <outlet property="storeButton2" destination="dJt-A5-3cp" id="ye0-h5-fc4"/>
@@ -75,6 +75,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhr-vb-Qol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="356.25" y="128.87323943661971"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="u8S-b9-iqT">
+            <objects>
+                <navigationController id="pqV-bi-gR8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dcD-aH-qTx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tNg-w4-i5e" kind="relationship" relationship="rootViewController" id="Rbt-PD-8yn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UQZ-rh-yJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370" y="128"/>
         </scene>
     </scenes>
 </document>
