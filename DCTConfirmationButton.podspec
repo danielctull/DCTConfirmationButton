@@ -79,7 +79,7 @@ A button subclass that acts like the app store button.
   s.source_files  = "DCTConfirmationButton/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
-  # s.public_header_files = "Classes/**/*.h"
+  s.public_header_files = "DCTConfirmationButton/DCTConfirmationButton.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -91,7 +91,10 @@ A button subclass that acts like the app store button.
   #
 
   # s.resource  = "icon.png"
-  s.resources = "DCTConfirmationButton.xcassets"
+  s.resources = '**/DCTConfirmationButton.xcassets'
+  # s.resource_bundle = {
+  #  'DCTConfirmationButtonResources' => [ 'DCTConfirmationButton/DCTConfirmationButton.xcassets' ]
+  # }
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
