@@ -324,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 244DE82D19A91BCE00A91DC7 /* iOS Framework.xcconfig */;
 			buildSettings = {
+				DCT_FRAMEWORK = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -335,6 +336,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 244DE82D19A91BCE00A91DC7 /* iOS Framework.xcconfig */;
 			buildSettings = {
+				DCT_FRAMEWORK = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
