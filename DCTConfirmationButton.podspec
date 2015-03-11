@@ -19,6 +19,7 @@ A button subclass that acts like the app store button.
   s.source_files  = "DCTConfirmationButton/*.{h,m}"
   s.public_header_files = "DCTConfirmationButton/DCTConfirmationButton.h"
   s.resources = '**/DCTConfirmationButton.xcassets'
+  #s.resource_bundle = { 'DCTConfirmationButtonInternal' => [ 'DCTConfirmationButton/DCTConfirmationButton.xcassets' ] }
   s.requires_arc = true
 
 end
