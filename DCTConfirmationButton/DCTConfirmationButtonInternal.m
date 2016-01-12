@@ -75,7 +75,7 @@
 - (NSString *)description {
 	return [NSString stringWithFormat:@"<%@: %p; title = %@>",
 			NSStringFromClass([self class]),
-			self,
+			(void *)self,
 			[self titleForState:UIControlStateNormal]];
 }
 
