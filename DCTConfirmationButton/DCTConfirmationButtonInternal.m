@@ -49,11 +49,13 @@
 
 - (CGSize)intrinsicContentSize {
 
-	if (self.hidden) {
+	UIFont *font = self.titleLabel.font;
+
+	if (self.hidden && font) {
 		return CGSizeZero;
 	}
 
-	NSDictionary *attributes = @{NSFontAttributeName : self.titleLabel.font};
+	NSDictionary *attributes = @{NSFontAttributeName : font};
 	CGSize paddingSize = [@"..." sizeWithAttributes:attributes];
 	CGFloat paddingWidth = floorf(paddingSize.width);
 	CGFloat paddingHeight = floorf(paddingSize.height / 2.0f);
